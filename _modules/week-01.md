@@ -1,6 +1,6 @@
 ---
 title: Week 1
-class: CSE234
+class: DSC291
 status: Active
 ---
 
@@ -15,7 +15,7 @@ Jan 7
 
 Jan 9
 : **2**{: .label} Basics: Modern DL, computational graph, frameworks
-  : [Slides](assets/slides/jan9.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/wi25/cse234_a00/1) &#8226; [Scribe Note](assets/scribe_notes/jan9_scribe.pdf)
+  : [Slides](assets/slides/jan9.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/dsc291_a00/1) &#8226; [Scribe Note](assets/scribe_notes/jan9_scribe.pdf)
 
 
 <!-- : **Readings**{: .label .label-reading} -->

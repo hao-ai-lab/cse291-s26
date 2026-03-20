@@ -2,6 +2,7 @@
 layout: page
 nav_order: 2
 title: Syllabus
+lang_ref: syllabus
 description: >-
     Syllabus
 ---
@@ -18,7 +19,7 @@ description: >-
 
 ---
 
-**In this year of CSE234 offering, we will focus more on "ML systems" other than "data systems"**. 
+**In this year of DSC291 offering, we will focus more on "ML systems" other than "data systems"**.
 
 The course is organized into three parts, covering the following topics.
 1. **Basics**: deep learning, autodiff, CUDA programming, ML hardware
@@ -51,11 +52,11 @@ The following courses are not prerequisites but highly preferred before you take
 ### Lectures
 The class meets 2 times a week for 80-minute lectures in person.
   - Attending the lectures is highly encouraged. 
-  - All lectures will be automatically [podcast here](https://podcast.ucsd.edu/watch/wi25/cse234_b00) afterward.
-  - We will use [Piazza](https://piazza.com/ucsd/winter2025/cse234) for asynchronous discussions and questions.
+  - All lectures will be automatically [podcast here](https://podcast.ucsd.edu/watch/sp26/dsc291_b00) afterward.
+  - We will use [Piazza](https://piazza.com/ucsd/spring2026/dsc291) for asynchronous discussions and questions.
 
 ### 3 Programming Assignments (PAs)
-  - See the [assignments page](assignments.md) for updates on the PA schedule and details.
+  - See the [assignments page]({{ '/assignments/' | relative_url }}) for updates on the PA schedule and details.
   - There are **5 late days** in total for all PAs. Plan your work accordingly.
 
 ### Exams
@@ -80,7 +81,7 @@ ChatGPT is highly recommended to polish the writing of your scribe notes.
 You will receive zero credit if you fail to submit your notes.
   - Sign-up: [Spreadsheet](https://docs.google.com/spreadsheets/d/18zlX-zmFu5cMR4M-xkWhIQOlnYPZrEXZj-TaO5MlIY0/edit?usp=sharing) (please sign-up by the end of 3rd week)
   - Template: [Overleaf latex template](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
-  - Submission: Submit a pull request to [course website repo](https://github.com/hao-ai-lab/cse234-w25) for review
+  - Submission: Submit a pull request to [course website repo](https://github.com/hao-ai-lab/dsc291-sp26) for review
   - Due: 11:59 pm PT of the day 7 days from the lecture
 
 ### Reading Summary
@@ -180,7 +181,7 @@ The grading scheme is a hybrid of absolute and relative grading. The absolute cu
   </tr>
   <tr>
     <td>F</td>
-    <td width="200px">< 50</td>
+    <td width="200px">&lt; 50</td>
     <td>Lowest 5%</td>
   </tr>
 </table>
@@ -196,13 +197,3 @@ The grading scheme is a hybrid of absolute and relative grading. The absolute cu
 - Please review UCSD's honor code and policies and procedures on [academic integrity](https://academicintegrity.ucsd.edu/) here. If plagiarism is detected in your code, or if we detect collusion on the graded quizzes or exams, or if you are found to be using someone else's clickers, or if any other form of academic integrity violation is identified, you will get zero for that component of your score and get downgraded substantially. I will also notify the University authorities for appropriate disciplinary action to be taken, up to and including expulsion from the University.
 - Please review UCSD's principles of community and our commitment to creating an inclusive learning environment on [this website](https://ucsd.edu/about/principles.html).
 - Harassment, discrimination, or intimidation of any form against any student will not be tolerated in class or on Piazza. Please review UCSD's policies on dealing with harassment and discrimination on [this website](https://ophd.ucsd.edu/).
-
-
-
-
-<script src="../assets/darkmode.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    onLoad();
-});
-</script>

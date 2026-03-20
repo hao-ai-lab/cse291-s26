@@ -1,14 +1,16 @@
 ---
 layout: page
 title: Staff
-description: CSE 234 Winter 2025 Staff
+lang_ref: staff
+description: DSC 291 Spring 2026 Staff
 ---
 
 # Staff
 
 ## Instructor
 
-{% assign instructors = site.staffers | where: 'role', 'Instructor' %}
+{% assign staffers = site.staffers | where: 'lang', page.lang %}
+{% assign instructors = staffers | where: 'role', 'Instructor' %}
 
 <div class="role flex">
 {% for staffer in instructors %}
@@ -32,7 +34,7 @@ _All office hours are held in-person in Warren 101 unless otherwise specified_
 
 <!-- _All office hours are held in-person in Warren 101 unless otherwise specified_ -->
 
-{% assign teaching_assistants = site.staffers | where: 'role', 'Teach Assistant' %}
+{% assign teaching_assistants = staffers | where: 'role', 'Teach Assistant' %}
 
 <div class="role flex">
 {% for staffer in teaching_assistants %}
@@ -49,10 +51,3 @@ _All office hours are held in-person in Warren 101 unless otherwise specified_
 {{ staffer }}
 {% endfor %}
 </div>  -->
-
-<script src="../assets/darkmode.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    onLoad();
-});
-</script>

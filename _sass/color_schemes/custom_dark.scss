@@ -7,6 +7,27 @@
     color: white !important;
 }
 
+.aux-nav .header-chip {
+    background-color: #34333a;
+    border: 1px solid #595766;
+    color: #ffeb82 !important;
+}
+
+.aux-nav .header-chip:hover {
+    background-color: #3f3d47;
+    border-color: #ffeb82;
+}
+
+.aux-nav .header-chip[aria-pressed="true"] {
+    background-color: #ffeb82;
+    border-color: #ffeb82;
+    color: #333333 !important;
+}
+
+.aux-nav .aux-nav-control-item--start::before {
+    background-color: #595766;
+}
+
 .module a, footer a {
     color: #ffeb82 !important;
 }

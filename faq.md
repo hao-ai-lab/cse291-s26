@@ -2,6 +2,7 @@
 layout: page
 nav_order: 999
 title: FAQs
+lang_ref: faq
 description: >-
   Frequently Asked Questions
 ---
@@ -69,10 +70,3 @@ description: >-
 **A:**  First off, we're glad that you're taking some time to understand our expectations! The expectations from a scribe are simple: the scribe should faithfully capture the professor's explanations in the lecture. We expect the notes to have the same structure/main sections as the slides, and many similar wordings as well. Additionally, the notes should also have helpful examples given by the professor in the class, additional context for different topics when needed, etc. The TAs will assess your notes based on the contents in the slides.
 
 You should not, however, try to rearrange the content as you see fit, or add in material from the additional readings provided. The scribe notes do not have to be a self-contained document on the topic - we're only looking for you to capture what was taught in class.
-
-<script src="../assets/darkmode.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    onLoad();
-});
-</script>

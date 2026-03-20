@@ -4,64 +4,38 @@ title: Home
 nav_order: 1
 nav_exclude: false
 permalink: index.html
+lang_ref: home
 seo:
   type: Course
-  name: CSE 234 Winter 2025
+  name: DSC 291 Spring 2026
 ---
 
-# CSE 234: Data Systems for Machine Learning
+# DSC 291: Data Systems for Machine Learning
 
 {: .mb-2 }
-Instructor: Hao Zhang, UC San Diego, Winter 2025
+Instructor: Hao Zhang, UC San Diego, Spring 2026
 {: .mb-2 .fs-6 .text-grey-dk-000 }
-
-<button class="js-toggle-dark-mode dm-btn btn">Toggle Dark Mode</button>
 
 <!-- [Lecture Recordings]({https://bcourses.berkeley.edu/courses/COURSE_ID/external_tools/KALTURA_ID}){: .btn .btn-blue} -->
 
 ## Announcements
 
 
-{% assign announcements = site.announcements | reverse %}
+{% assign announcements = site.announcements | where: 'lang', page.lang | reverse %}
 {% for announcement in announcements limit:1 %}
 {{ announcement }}
 {% endfor %}
 
 
-{% assign mods = site.modules | where: 'class', 'CSE234' %}
-{% assign active-mods = '' | split: '' %}
+{% assign mods = site.modules | where: 'class', 'DSC291' | where: 'lang', page.lang %}
+{% assign active_mods = '' | split: '' %}
 
 {% for mod in mods %}
   {% if mod.status == 'Active' %}
-    {% assign active-mods = active-mods | push: mod %}
+    {% assign active_mods = active_mods | push: mod %}
   {% endif %}
 {% endfor %}
 
-{% for module in active-mods %}
+{% for module in active_mods %}
   {{ module }}
 {% endfor %}
-
-<script src="assets/darkmode.js"></script>
-<script>
-  const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-
-  jtd.addEvent(toggleDarkMode, 'click', function(){
-    if (jtd.getTheme() === 'custom_dark') {
-      jtd.setTheme('light');
-      localStorage.setItem("darkMode", 0);
-      toggleDarkMode.innerHTML = "Toggle Dark Mode";
-      toggleDarkMode.classList.add('dm-btn');
-        toggleDarkMode.classList.remove('dm-dark-btn');
-    } else {
-      jtd.setTheme('custom_dark');
-      localStorage.setItem("darkMode", 1);
-      toggleDarkMode.innerHTML = "Return to the Light";
-      toggleDarkMode.classList.add('dm-dark-btn');
-      toggleDarkMode.classList.remove('dm-btn');
-    }
-  });
-
-    window.addEventListener("DOMContentLoaded", (event) => {
-      onLoad();
-  });
-</script>

@@ -2,11 +2,13 @@
 layout: page
 nav_order: 997
 title: Resources
+lang_ref: resources
 description: >-
     Resources
 ---
 
 # Resources
+
 {:.no_toc}
 
 ## Table of Contents
@@ -54,18 +56,11 @@ Exams and practice exams from previous semesters can be found below. These exams
 -->
 ## Wellness Resources
 
-Your wellbeing matters, and we hope that CSE 234 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!
+Your wellbeing matters, and we hope that DSC 291 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!
 
 * [University Health Services](https://studenthealth.ucsd.edu/)
 * [UHS Counseling and Psychological Services (CAPS)](https://caps.ucsd.edu/)
 * [Office For Students with Disabilities](https://osd.ucsd.edu/)
 * [Office of Student Advocacy](https://asadvocacy.ucsd.edu/)
 * [Basic Needs Center](https://basicneeds.ucsd.edu/)
-* [Mental Health Resources Guide](https://studenthealth.ucsd.edu/services/mental-health/index.html) 
-
-<script src="../assets/darkmode.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    onLoad();
-});
-</script>
+* [Mental Health Resources Guide](https://studenthealth.ucsd.edu/services/mental-health/index.html)

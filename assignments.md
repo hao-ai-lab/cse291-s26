@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Assignments
+lang_ref: assignments
 description: Information on programming assignments.
 nav_order: 980
 ---
@@ -9,21 +10,21 @@ nav_order: 980
 
 PA1: Automatic Differentiation and Transformers
 - Release Date: Sunday, 01/19/2025
-- Starter Code: [Github](https://github.com/hao-ai-lab/cse234-w25-PA/tree/main/pa1)
+- Starter Code: [Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa1)
 - Remember do **not** use a public repo for your solution!
 - Due Date: 02/09/2025
 - Upload to Gradescope
 
 PA2: Matmul Kernel Optimization & Tensor Parallel Communication
 - Release Date: Tuesday, 02/11/2025
-- Starter code: [Github](https://github.com/hao-ai-lab/cse234-w25-PA/tree/main/pa2)
+- Starter code: [Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa2)
 - This is a group (or individual) assignment for up to 3 people! You may work alone or find teammates.
 - Due Date: 03/04/2025
 - Upload tar to Gradescope (add group members if you have them. 1 submission per group is fine!)
 
 PA3: MoE, Scaling Law, Speculative Decoding, and Future of LLMs
 - Release Date: Thursday, 02/27/2025
-- Starter code: [Github](https://github.com/hao-ai-lab/cse234-w25-PA/tree/main/pa3)
+- Starter code: [Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa3)
 - For Q1-Q3, you can find a group for up to 3 people! You may work alone or find teammates.
 - For Q4, you will work individually to complete an essay. This part is **NOT** a group assignment, and you will be submitting your essay to a separate Gradescope assignment page.
 - Due Date: 03/20/2025
@@ -54,10 +55,3 @@ PA3: Tensor Parall Communication
     - Team decisions cannot be changed.
     - The TAs will then confirm your team memberships and team IDs. 
 - There are no late days for the programming assignments. So, plan your work accordingly!  -->
-
-<script src="../assets/darkmode.js"></script>
-<script>
-  window.addEventListener("DOMContentLoaded", (event) => {
-    onLoad();
-});
-</script>
