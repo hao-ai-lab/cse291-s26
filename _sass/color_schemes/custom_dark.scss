@@ -1,0 +1,98 @@
+
+.nav-list a {
+    color: white !important;
+}
+
+.aux-nav a {
+    color: white !important;
+}
+
+.aux-nav .header-chip {
+    background-color: #34333a;
+    border: 1px solid #595766;
+    color: #ffeb82 !important;
+}
+
+.aux-nav .header-chip:hover {
+    background-color: #3f3d47;
+    border-color: #ffeb82;
+}
+
+.aux-nav .header-chip[aria-pressed="true"] {
+    background-color: #ffeb82;
+    border-color: #ffeb82;
+    color: #333333 !important;
+}
+
+.aux-nav .aux-nav-control-item--start::before {
+    background-color: #595766;
+}
+
+.module a, footer a {
+    color: #ffeb82 !important;
+}
+
+.module {
+    border: 1px solid #444444;
+}
+
+$link-color: $grey-lt-000;
+
+a {
+    color: $yellow-000 !important;
+
+}
+.pronouns {
+    background-color: #777777 !important;
+}
+
+ol a {
+    color: #ffeb82 !important;
+}
+
+.main-content a {
+    color: #ffeb82 !important;
+}
+
+.btn {
+    color: #333333 !important;
+}
+
+@import "./color_schemes/dark";
+
+.dm-dark-btn::selection {
+    background-color: #ffeb82 !important;
+}
+
+::selection {
+    background-color: #ffeb82 !important;
+}
+
+.dm-dark-btn {
+    color: #ffeb82 !important;
+}
+
+.dm-dark-btn:hover {
+    color: #e7af06 !important;
+}
+
+.dm-text a {
+    color: #ffeb82 !important;
+}
+
+.yellow-link {
+    color: #ffeb82 !important;
+}
+
+code {
+    background-color: #BBBBBB !important;
+    color: #555EB4 !important;
+}
+
+input {
+    color: white !important;
+}
+
+.announcement-meta {
+    color: #959396;
+}

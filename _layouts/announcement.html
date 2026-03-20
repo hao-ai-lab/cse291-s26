@@ -1,0 +1,22 @@
+<div class="announcement">
+  <h2>{{ page.title }}</h2>
+  <span class="announcement-meta">
+    {% if page.date %}
+    {% if page.lang == 'zh' %}
+    {{ page.date | date: '%-m月%-d日' }}
+    {% else %}
+    {{ page.date | date: '%b %e' }}
+    {% endif %}
+    &middot;
+    {% endif %}
+    {% assign minutes = content | strip_html | number_of_words | divided_by: 180.0 | round %}
+    {% if page.lang == 'zh' %}
+    {{ minutes }} 分钟阅读
+    {% else %}
+    {{ minutes }} min read
+    {% endif %}
+  </span>
+  <div>
+    {{ content }}
+  </div>
+</div>
