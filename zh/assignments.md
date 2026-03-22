@@ -11,10 +11,10 @@ lang_ref: assignments
 # 编程作业（PA）
 
 PA1：Automatic Differentiation and Transformers
-- 发布时间：2026/01/19（周日）
-- Starter Code：[Github](https://github.com/hao-ai-lab/cse291-sp26-PA/tree/main/pa1)
+- 发布时间：待定
+- Starter Code：待定
 - 请记住：**不要**把你的解答放到公开仓库中！
-- 截止日期：2026/02/09
+- 截止日期：待定
 - 提交到 Gradescope
 
 <!--
