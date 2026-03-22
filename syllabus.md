@@ -29,8 +29,8 @@ The course is organized into three parts, covering the following topics.
 There will also be multiple guest lectures from the inventors of those key techniques. It is **mandatory** to attend all guest lectures.
 
 ## Logistics
-- **Lectures**: TuTh 06:30 PM - 08:00 PM.
-- **Location**: TBD.
+- **Lectures**: TuTh 12:30p-1:50p.
+- **Location**: WLH 2005.
 - **Instructor**: [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/); Office: HDSI 440.
 
 ## Pre-requisites
