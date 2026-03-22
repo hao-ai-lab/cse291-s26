@@ -1,7 +1,7 @@
 ---
 title: Week 1 Announcements
 week: 1
-date: 2025-03-31
+date: 2026-03-31
 ---
 
 * Welcome to DSC 291: Data Systems for Machine Learning, Spring 2026!

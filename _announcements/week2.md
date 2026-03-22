@@ -1,7 +1,7 @@
 ---
 title: Week 2 Announcements
 week: 2
-date: 2024-01-12
+date: 2026-04-07
 ---
 
 * Please finish the [start-of-quarter survey](https://forms.gle/4fuE1HUFbd13NKbp7) by 1/19

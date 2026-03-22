@@ -1,7 +1,7 @@
 ---
 title: 第 2 周公告
 week: 2
-date: 2024-01-12
+date: 2026-04-07
 lang: zh
 ---
 

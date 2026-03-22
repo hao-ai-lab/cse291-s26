@@ -1,7 +1,7 @@
 ---
 title: Week 3 Announcements
 week: 3
-date: 2025-01-19
+date: 2026-04-14
 ---
 
 * PA1 is released. Please check the [assignment page](/dsc291-sp26/assignments/) for more details.
