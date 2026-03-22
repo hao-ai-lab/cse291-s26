@@ -8,10 +8,10 @@ lang: zh
 lang_ref: home
 seo:
   type: Course
-  name: DSC 291 2026 春季
+  name: CSE 291 2026 春季
 ---
 
-# DSC 291：面向机器学习的数据系统
+# CSE 291：面向机器学习的数据系统
 
 {: .mb-2 }
 授课教师：Hao Zhang，加州大学圣地亚哥分校，2026 春季
@@ -24,7 +24,7 @@ seo:
 {{ announcement }}
 {% endfor %}
 
-{% assign mods = site.modules | where: 'class', 'DSC291' | where: 'lang', page.lang %}
+{% assign mods = site.modules | where: 'class', 'CSE291' | where: 'lang', page.lang %}
 {% assign active_mods = '' | split: '' %}
 
 {% for mod in mods %}

@@ -2,7 +2,7 @@
 layout: page
 title: Staff
 lang_ref: staff
-description: DSC 291 Spring 2026 Staff
+description: CSE 291 Spring 2026 Staff
 ---
 
 # Staff

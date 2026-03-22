@@ -56,7 +56,7 @@ Exams and practice exams from previous semesters can be found below. These exams
 -->
 ## Wellness Resources
 
-Your wellbeing matters, and we hope that DSC 291 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!
+Your wellbeing matters, and we hope that CSE 291 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!
 
 * [University Health Services](https://studenthealth.ucsd.edu/)
 * [UHS Counseling and Psychological Services (CAPS)](https://caps.ucsd.edu/)

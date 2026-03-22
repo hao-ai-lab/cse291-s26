@@ -19,7 +19,7 @@ description: >-
 
 ---
 
-**In this year of DSC291 offering, we will focus more on "ML systems" other than "data systems"**.
+**In this year of CSE291 offering, we will focus more on "ML systems" other than "data systems"**.
 
 The course is organized into three parts, covering the following topics.
 1. **Basics**: deep learning, autodiff, CUDA programming, ML hardware
@@ -52,8 +52,8 @@ The following courses are not prerequisites but highly preferred before you take
 ### Lectures
 The class meets 2 times a week for 80-minute lectures in person.
   - Attending the lectures is highly encouraged. 
-  - All lectures will be automatically [podcast here](https://podcast.ucsd.edu/watch/sp26/dsc291_b00) afterward.
-  - We will use [Piazza](https://piazza.com/ucsd/spring2026/dsc291) for asynchronous discussions and questions.
+  - All lectures will be automatically [podcast here](https://podcast.ucsd.edu/watch/sp26/cse291_b00) afterward.
+  - We will use [Piazza](https://piazza.com/ucsd/spring2026/cse291) for asynchronous discussions and questions.
 
 ### 3 Programming Assignments (PAs)
   - See the [assignments page]({{ '/assignments/' | relative_url }}) for updates on the PA schedule and details.
@@ -81,7 +81,7 @@ ChatGPT is highly recommended to polish the writing of your scribe notes.
 You will receive zero credit if you fail to submit your notes.
   - Sign-up: [Spreadsheet](https://docs.google.com/spreadsheets/d/18zlX-zmFu5cMR4M-xkWhIQOlnYPZrEXZj-TaO5MlIY0/edit?usp=sharing) (please sign-up by the end of 3rd week)
   - Template: [Overleaf latex template](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
-  - Submission: Submit a pull request to [course website repo](https://github.com/hao-ai-lab/dsc291-sp26) for review
+  - Submission: Submit a pull request to [course website repo](https://github.com/hao-ai-lab/cse291-sp26) for review
   - Due: 11:59 pm PT of the day 7 days from the lecture
 
 ### Reading Summary

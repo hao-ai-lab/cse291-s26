@@ -21,7 +21,7 @@ description: >-
 
 ---
 
-**本次 DSC 291 更侧重“ML systems”，而不是更广义的“data systems”。**
+**本次 CSE 291 更侧重“ML systems”，而不是更广义的“data systems”。**
 
 课程分为三个部分，覆盖以下主题。
 1. **基础**：深度学习、自动微分、CUDA 编程、ML 硬件
@@ -53,8 +53,8 @@ description: >-
 ### 讲座
 课程每周线下上课 2 次，每次 80 分钟。
   - 强烈建议到场参加。
-  - 所有讲座会在课后自动[发布到这里](https://podcast.ucsd.edu/watch/sp26/dsc291_b00)。
-  - 我们会使用 [Piazza](https://piazza.com/ucsd/spring2026/dsc291) 进行异步讨论和答疑。
+  - 所有讲座会在课后自动[发布到这里](https://podcast.ucsd.edu/watch/sp26/cse291_b00)。
+  - 我们会使用 [Piazza](https://piazza.com/ucsd/spring2026/cse291) 进行异步讨论和答疑。
 
 ### 3 次编程作业（PA）
   - 最新 PA 安排与详情请见[作业页面]({{ '/zh/assignments/' | relative_url }})。
@@ -80,7 +80,7 @@ description: >-
 若未提交，将记零分。
   - 报名表：[Spreadsheet](https://docs.google.com/spreadsheets/d/18zlX-zmFu5cMR4M-xkWhIQOlnYPZrEXZj-TaO5MlIY0/edit?usp=sharing)（请在第 3 周结束前完成）
   - 模板：[Overleaf LaTeX 模板](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
-  - 提交方式：向[课程网站仓库](https://github.com/hao-ai-lab/dsc291-sp26)提交 pull request
+  - 提交方式：向[课程网站仓库](https://github.com/hao-ai-lab/cse291-sp26)提交 pull request
   - 截止时间：lecture 后第 7 天的晚上 11:59 PT
 
 ### Reading Summary

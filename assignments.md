@@ -10,7 +10,7 @@ nav_order: 980
 
 PA1: Automatic Differentiation and Transformers
 - Release Date: Sunday, 01/19/2026
-- Starter Code: [Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa1)
+- Starter Code: [Github](https://github.com/hao-ai-lab/cse291-sp26-PA/tree/main/pa1)
 - Remember do **not** use a public repo for your solution!
 - Due Date: 02/09/2026
 - Upload to Gradescope

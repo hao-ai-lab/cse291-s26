@@ -1,4 +1,4 @@
-# DSC 291 ML Systems Spring 2026
+# CSE 291 ML Systems Spring 2026
 
 ## How to build locally
 

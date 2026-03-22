@@ -13,11 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: DSC 291
+title: CSE 291
 description: Machine Learning Systems
 author: Hao Zhang
 email: dsc204a-w24@gmail.com
-baseurl: '/dsc291-sp26' # the subpath of your site, e.g. /blog
+baseurl: '/cse291-sp26' # the subpath of your site, e.g. /blog
 url: '' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "vendor", "bundle"]
 #logo: "/data8logo.png"
@@ -30,7 +30,7 @@ heading_anchors: true
 permalink: pretty
 aux_links:
   Office Hours:
-    - '/dsc291-sp26/officehours'
+    - '/cse291-sp26/officehours'
   Canvas:
     - 'https://canvas.ucsd.edu/courses/61585'
   Piazza:

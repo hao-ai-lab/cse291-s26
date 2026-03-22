@@ -45,7 +45,7 @@ description: >-
 
 ## 心理与健康资源
 
-你的身心健康很重要，我们希望 DSC 291 **绝不会**成为你照顾自己的阻碍。下面是一些 UCSD 校园资源。如有需要，也欢迎随时联系授课教师和 TA 团队。
+你的身心健康很重要，我们希望 CSE 291 **绝不会**成为你照顾自己的阻碍。下面是一些 UCSD 校园资源。如有需要，也欢迎随时联系授课教师和 TA 团队。
 
 * [University Health Services](https://studenthealth.ucsd.edu/)
 * [UHS Counseling and Psychological Services (CAPS)](https://caps.ucsd.edu/)

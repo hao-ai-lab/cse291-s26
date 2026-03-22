@@ -1,6 +1,6 @@
 ---
 title: 第 1 周
-class: DSC291
+class: CSE291
 status: Active
 lang: zh
 ---
@@ -15,4 +15,4 @@ lang: zh
 
 1 月 9 日
 : **2**{: .label} 基础：现代深度学习、计算图、框架
-  : [Slides](assets/slides/jan9.pdf) &#8226; [录像](https://podcast.ucsd.edu/watch/sp26/dsc291_a00/1) &#8226; [Scribe Note](assets/scribe_notes/jan9_scribe.pdf)
+  : [Slides](assets/slides/jan9.pdf) &#8226; [录像](https://podcast.ucsd.edu/watch/sp26/cse291_a00/1) &#8226; [Scribe Note](assets/scribe_notes/jan9_scribe.pdf)
