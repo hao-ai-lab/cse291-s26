@@ -30,7 +30,7 @@ There will also be multiple guest lectures from the inventors of those key techn
 
 ## Logistics
 - **Lectures**: TuTh 06:30 PM - 08:00 PM.
-- **Location**: [SOLIS 107](https://map.concept3d.com/?id=1005#!ct/18312,63891,65653?m/237105?s/solis).
+- **Location**: TBD.
 - **Instructor**: [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/); Office: HDSI 440.
 
 ## Pre-requisites

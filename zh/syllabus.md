@@ -32,7 +32,7 @@ description: >-
 
 ## 课程信息
 - **上课时间**：周二、周四 06:30 PM - 08:00 PM。
-- **地点**：[SOLIS 107](https://map.concept3d.com/?id=1005#!ct/18312,63891,65653?m/237105?s/solis)。
+- **地点**：待定。
 - **授课教师**：[Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)，办公室：HDSI 440。
 
 ## 先修要求
