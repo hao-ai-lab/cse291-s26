@@ -15,29 +15,17 @@ PA1: Automatic Differentiation and Transformers
 - Due Date: 02/09/2026
 - Upload to Gradescope
 
+<!--
 PA2: Matmul Kernel Optimization & Tensor Parallel Communication
-- Release Date: Tuesday, 02/11/2026
-- Starter code: [Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa2)
-- This is a group (or individual) assignment for up to 3 people! You may work alone or find teammates.
-- Due Date: 03/04/2026
-- Upload tar to Gradescope (add group members if you have them. 1 submission per group is fine!)
+- Release Date: TBD
+- Starter code: TBD
+- Due Date: TBD
 
 PA3: MoE, Scaling Law, Speculative Decoding, and Future of LLMs
-- Release Date: Thursday, 02/27/2026
-- Starter code: [Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa3)
-- For Q1-Q3, you can find a group for up to 3 people! You may work alone or find teammates.
-- For Q4, you will work individually to complete an essay. This part is **NOT** a group assignment, and you will be submitting your essay to a separate Gradescope assignment page.
-- Due Date: 03/20/2026
-- Upload tar to Gradescope (add group members if you have them. 1 submission per group is fine!)
-
-
-<!--
-PA3: Tensor Parall Communication
-- Release Date: Wednesday 6/5/2024
-- Starter code: [Github](https://github.com/hao-ai-lab/dsc291-PA)
-- Remember do **not** use a public repo for your solution!
-- Due Date: 06/14/2024
-- Upload tar to Gradescope -->
+- Release Date: TBD
+- Starter code: TBD
+- Due Date: TBD
+-->
 
 
 
