@@ -11,25 +11,25 @@ lang_ref: assignments
 # 编程作业（PA）
 
 PA1：Automatic Differentiation and Transformers
-- 发布时间：2025/01/19（周日）
+- 发布时间：2026/01/19（周日）
 - Starter Code：[Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa1)
 - 请记住：**不要**把你的解答放到公开仓库中！
-- 截止日期：2025/02/09
+- 截止日期：2026/02/09
 - 提交到 Gradescope
 
 PA2：Matmul Kernel Optimization & Tensor Parallel Communication
-- 发布时间：2025/02/11（周二）
+- 发布时间：2026/02/11（周二）
 - Starter code：[Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa2)
 - 这是一个最多 3 人的小组作业（也可以单人完成）。
-- 截止日期：2025/03/04
+- 截止日期：2026/03/04
 - 将 tar 包上传到 Gradescope（如果有组员请添加。每组交 1 份即可。）
 
 PA3：MoE, Scaling Law, Speculative Decoding, and Future of LLMs
-- 发布时间：2025/02/27（周四）
+- 发布时间：2026/02/27（周四）
 - Starter code：[Github](https://github.com/hao-ai-lab/dsc291-sp26-PA/tree/main/pa3)
 - Q1-Q3 可最多 3 人组队，也可以单独完成。
 - Q4 需要个人独立完成 essay，这一部分**不是**小组作业，并且会在单独的 Gradescope 页面提交。
-- 截止日期：2025/03/20
+- 截止日期：2026/03/20
 - 将 tar 包上传到 Gradescope（如果有组员请添加。每组交 1 份即可。）
 
 ### 说明与注意事项
