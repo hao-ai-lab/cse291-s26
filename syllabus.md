@@ -53,7 +53,7 @@ The following courses are not prerequisites but highly preferred before you take
 The class meets 2 times a week for 80-minute lectures in person.
   - Attending the lectures is highly encouraged. 
   - All lectures will be automatically [podcast here](https://podcast.ucsd.edu/watch/sp26/cse291_b00) afterward.
-  - We will use [Piazza](https://piazza.com/ucsd/spring2026/cse291) for asynchronous discussions and questions.
+  - We will use [Piazza](https://piazza.com/class/mk1r7un7xg85bw#) for asynchronous discussions and questions.
 
 ### 3 Programming Assignments (PAs)
   - See the [assignments page]({{ '/assignments/' | relative_url }}) for updates on the PA schedule and details.

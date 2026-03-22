@@ -54,7 +54,7 @@ description: >-
 课程每周线下上课 2 次，每次 80 分钟。
   - 强烈建议到场参加。
   - 所有讲座会在课后自动[发布到这里](https://podcast.ucsd.edu/watch/sp26/cse291_b00)。
-  - 我们会使用 [Piazza](https://piazza.com/ucsd/spring2026/cse291) 进行异步讨论和答疑。
+  - 我们会使用 [Piazza](https://piazza.com/class/mk1r7un7xg85bw#) 进行异步讨论和答疑。
 
 ### 3 次编程作业（PA）
   - 最新 PA 安排与详情请见[作业页面]({{ '/zh/assignments/' | relative_url }})。

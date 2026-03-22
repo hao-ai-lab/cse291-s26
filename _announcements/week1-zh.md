@@ -8,4 +8,4 @@ lang: zh
 * 欢迎来到 CSE 291：面向机器学习的数据系统，2026 春季！
 * 课程将于 **3月31日（周二）** 开始。
 * 请查看[课程大纲]({{ '/zh/syllabus/' | relative_url }})了解课程详情和政策。
-* 请加入 [Piazza](https://piazza.com/ucsd/spring2026/cse291) 参与讨论和问答。
+* 请加入 [Piazza](https://piazza.com/class/mk1r7un7xg85bw#) 参与讨论和问答。
