@@ -17,7 +17,7 @@ seo:
 授课教师：Hao Zhang，加州大学圣地亚哥分校，2026 春季
 {: .mb-2 .fs-6 .text-grey-dk-000 }
 
-本课程同时以 DSC 291 开设。
+Cross-listed as DSC 291.
 {: .fs-4 .text-grey-dk-000 }
 
 ## 课程公告
