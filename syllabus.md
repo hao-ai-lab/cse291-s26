@@ -112,7 +112,7 @@ We appreciate everyone being actively involved in the class! There are several w
 
 ## Grading
 
-### Components 
+### Components (TBD)
 - Programming Assignments: 15% + 15% + 15%
 - Final Exam: 37%
 - Reading Summary: 10%
