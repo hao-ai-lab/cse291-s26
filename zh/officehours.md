@@ -31,5 +31,5 @@ description: >-
   </style>
 
 <div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=c_bc0329cb9a638614e060e86bc09fd97026abda9f67712e0eba672956fe6c652a%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+  <iframe src="https://calendar.google.com/calendar/embed?src=c_3b6e452c11214a126a83f3f1a9ea03a2c712badb1023657204c96fc98a99dd63%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
