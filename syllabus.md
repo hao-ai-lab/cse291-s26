@@ -62,7 +62,7 @@ The class meets 2 times a week for 80-minute lectures in person.
 ### Exams
   - To make your life easier: **There is NO midterm**. As an alternative, we ask for reading summary. 
   - There will be a final exam. The final exam will be held **in person**. Please plan accordingly. 
-  - Exam date: March 18, 2025, 7-10 pm.
+  - Exam date: March 18, 2026, 7-10 pm.
   - The exams will **have and only have** multiple choice questions (MCQ), i.e. select one or multiple answers that all apply.
   - The guideline for time per question is a max of 1 min per point. The points of each question will be calibrated accordingly.
   - If you miss the exam, you will get no credit for it, unless you notify the instructor in advance with a university approved reason and receive a makeup exam slot.
