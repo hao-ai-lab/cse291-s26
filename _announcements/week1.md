@@ -5,6 +5,6 @@ date: 2026-03-31
 ---
 
 * Welcome to CSE 291: Data Systems for Machine Learning, Spring 2026!
-* We will start at **Tuesday, March 31st, 6:30 PM**.
+* We will start at **Tuesday, March 31st**.
 * Please check the [syllabus]({{ '/syllabus/' | relative_url }}) for course details and policies.
 * Join us on [Piazza](https://piazza.com/ucsd/spring2026/cse291) for discussions and Q&A.
