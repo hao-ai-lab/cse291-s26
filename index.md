@@ -16,6 +16,9 @@ seo:
 Instructor: Hao Zhang, UC San Diego, Spring 2026
 {: .mb-2 .fs-6 .text-grey-dk-000 }
 
+Also available as DSC 291.
+{: .fs-4 .text-grey-dk-000 }
+
 <!-- [Lecture Recordings]({https://bcourses.berkeley.edu/courses/COURSE_ID/external_tools/KALTURA_ID}){: .btn .btn-blue} -->
 
 ## Announcements
