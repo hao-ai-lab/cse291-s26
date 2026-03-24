@@ -31,8 +31,8 @@ description: >-
 课程期间还会邀请多位关键技术的发明者来做 guest lecture，所有 guest lecture 都**必须参加**。
 
 ## 课程信息
-- **上课时间**：周二、周四 06:30 PM - 08:00 PM。
-- **地点**：待定。
+- **上课时间**：周二、周四 12:30 PM - 1:50 PM。
+- **地点**：[Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar)。
 - **授课教师**：[Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)，办公室：HDSI 440。
 
 ## 先修要求
@@ -54,7 +54,7 @@ description: >-
 课程每周线下上课 2 次，每次 80 分钟。
   - 强烈建议到场参加。
   - 所有讲座会在课后自动[发布到这里](https://podcast.ucsd.edu/watch/sp26/cse291_b00)。
-  - 我们会使用 [Piazza](https://piazza.com/ucsd/spring2026/cse291) 进行异步讨论和答疑。
+  - 我们会使用 [Piazza](https://piazza.com/class/mmy8wnuoci43xq#) 进行异步讨论和答疑。
 
 ### 3 次编程作业（PA）
   - 最新 PA 安排与详情请见[作业页面]({{ '/zh/assignments/' | relative_url }})。

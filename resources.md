@@ -22,7 +22,7 @@ We will gradually add more useful resources on this page.
 
 ## Book, Related Documentation, and Courses
 
-* **If you are not familiar with Python programming, use any online tutorial to get a handle of it.** Here is a [Python mini-course](http://ai.berkeley.edu/tutorial.html#PythonBasics).
+* **If you are not familiar with Python programming, use any online tutorial to get a handle of it.** Here is a [Berkeley Python learning page](https://python.berkeley.edu/learn/).
 * Computer Organization and Design (5th edition), by David Patterson and John Hennessy (aka the "CompOrg Book").
 * Operating Systems: Three Easy Pieces, by Remzi and Andrea Arpaci-Dusseau (aka the "Comet Book"). Here's the [free e-book](https://pages.cs.wisc.edu/~remzi/OSTEP/)
 * Data Management in Machine Learning Systems, by Matthias Boehm, Arun Kumar, and Jun Yang.
@@ -32,8 +32,6 @@ We will gradually add more useful resources on this page.
 * [Dive into Deep Learning](https://d2l.ai/)
 * [Machine Learning Compilation](https://mlc.ai/)
 * [CSE 224: Graduate Networked Systems](https://canvas.ucsd.edu/courses/43955)
-
-<!--* [DSC 204a, Spring 2023](https://haojian.github.io/DSC204A23WI/)-->
 
 ## Materials
 

@@ -29,8 +29,8 @@ The course is organized into three parts, covering the following topics.
 There will also be multiple guest lectures from the inventors of those key techniques. It is **mandatory** to attend all guest lectures.
 
 ## Logistics
-- **Lectures**: TuTh 12:30p-1:50p.
-- **Location**: WLH 2005.
+- **Lectures**: Tuesday/Thursday 12:30 PM - 1:50 PM.
+- **Location**: [Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar).
 - **Instructor**: [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/); Office: HDSI 440.
 
 ## Pre-requisites
@@ -53,7 +53,7 @@ The following courses are not prerequisites but highly preferred before you take
 The class meets 2 times a week for 80-minute lectures in person.
   - Attending the lectures is highly encouraged. 
   - All lectures will be automatically [podcast here](https://podcast.ucsd.edu/watch/sp26/cse291_b00) afterward.
-  - We will use [Piazza](https://piazza.com/ucsd/spring2026/cse291) for asynchronous discussions and questions.
+  - We will use [Piazza](https://piazza.com/class/mmy8wnuoci43xq#) for asynchronous discussions and questions.
 
 ### 3 Programming Assignments (PAs)
   - See the [assignments page]({{ '/assignments/' | relative_url }}) for updates on the PA schedule and details.
