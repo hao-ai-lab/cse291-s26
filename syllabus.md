@@ -81,7 +81,7 @@ ChatGPT is highly recommended to polish the writing of your scribe notes.
 You will receive zero credit if you fail to submit your notes.
   - Sign-up: [Spreadsheet](https://docs.google.com/spreadsheets/d/10c9lPa6fNvWVJ7DZx6Xm9sjxrai8VofrMDiQzwXHVcU/edit?usp=sharing) (please sign-up by the end of 3rd week)
   - Template: [Overleaf latex template](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
-  - Submission: Submit a pull request to [course website repo](https://github.com/hao-ai-lab/cse291-sp26) for review
+  - Submission: Submit a pull request to [course website repo](https://github.com/hao-ai-lab/cse291-s26) for review
   - Due: 11:59 pm PT of the day 7 days from the lecture
 
 ### Reading Summary

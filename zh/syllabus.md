@@ -80,7 +80,7 @@ description: >-
 若未提交，将记零分。
   - 报名表：[Spreadsheet](https://docs.google.com/spreadsheets/d/18zlX-zmFu5cMR4M-xkWhIQOlnYPZrEXZj-TaO5MlIY0/edit?usp=sharing)（请在第 3 周结束前完成）
   - 模板：[Overleaf LaTeX 模板](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
-  - 提交方式：向[课程网站仓库](https://github.com/hao-ai-lab/cse291-sp26)提交 pull request
+  - 提交方式：向[课程网站仓库](https://github.com/hao-ai-lab/cse291-s26)提交 pull request
   - 截止时间：lecture 后第 7 天的晚上 11:59 PT
 
 ### Reading Summary
