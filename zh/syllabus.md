@@ -33,6 +33,7 @@ description: >-
 ## 课程信息
 - **上课时间**：周二、周四 12:30 PM - 1:50 PM。
 - **地点**：[Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar)。
+- **课程邮箱**：[cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)。
 - **授课教师**：[Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)，办公室：HDSI 440。
 
 ## 先修要求

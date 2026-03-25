@@ -31,6 +31,7 @@ There will also be multiple guest lectures from the inventors of those key techn
 ## Logistics
 - **Lectures**: Tuesday/Thursday 12:30 PM - 1:50 PM.
 - **Location**: [Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar).
+- **Course Email**: [cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com).
 - **Instructor**: [Hao Zhang](https://cseweb.ucsd.edu/~haozhang/); Office: HDSI 440.
 
 ## Pre-requisites

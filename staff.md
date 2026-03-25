@@ -7,6 +7,8 @@ description: CSE 291 Spring 2026 Staff
 
 # Staff
 
+Course email: [cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)
+
 ## Instructor
 
 {% assign staffers = site.staffers | where: 'lang', page.lang %}

@@ -9,6 +9,8 @@ lang_ref: staff
 
 # 课程团队
 
+课程邮箱：[cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)
+
 ## 授课教师
 
 {% assign staffers = site.staffers | where: 'lang', page.lang %}

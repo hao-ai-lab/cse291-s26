@@ -55,7 +55,7 @@ description: >-
 
 **问：这门课最好的求助方式是什么？**
 
-**答：** 最推荐的方式是参加课程 staff 的 office hours，或者在 Piazza 上提问。课程团队会频繁查看 Piazza，并尽快给出完整回答。
+**答：** 最推荐的方式是参加课程 staff 的 office hours，或者在 Piazza 上提问。课程团队会频繁查看 Piazza，并尽快给出完整回答。如果是私密问题或课程事务，请发邮件至 [cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)。
 
 ## 评分与考核
 

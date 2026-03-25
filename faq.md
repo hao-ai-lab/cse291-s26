@@ -53,7 +53,7 @@ description: >-
 
 **Q: What is the best way to get help in this course?**
 
-**A:** Your best avenues are to go to office hours held by the course staff, or to ask questions on Piazza. Course staff will be monitoring Piazza frequently and will try to answer your question quickly and thoroughly.
+**A:** Your best avenues are to go to office hours held by the course staff, or to ask questions on Piazza. Course staff will be monitoring Piazza frequently and will try to answer your question quickly and thoroughly. For private or logistical questions, email [cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com).
 
 ## Grading and Assessment
 
