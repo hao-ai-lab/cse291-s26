@@ -8,10 +8,10 @@ lang: zh
 lang_ref: home
 seo:
   type: Course
-  name: CSE 291 Spring 2026
+  name: CSE 291A/DSC 291 Spring 2026
 ---
 
-# CSE 291：面向机器学习的数据系统
+# CSE 291A/DSC 291：面向机器学习的数据系统
 
 {: .mb-2 }
 Instructor: Hao Zhang, UC San Diego, Spring 2026

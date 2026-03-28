@@ -21,7 +21,7 @@ description: >-
 
 ---
 
-**本次 CSE 291 更侧重“ML systems”，而不是更广义的“data systems”。**
+**本次 CSE 291A/DSC 291 更侧重“ML systems”，而不是更广义的“data systems”。**
 
 课程分为三个部分，覆盖以下主题。
 1. **基础**：深度学习、自动微分、CUDA 编程、ML 硬件
@@ -79,8 +79,8 @@ description: >-
 只要笔记质量达标，就能获得 full credit；如果存在错误或质量不足，我们会通知你，并给你**一次**修改机会。
 强烈建议使用 ChatGPT 来润色 scribe notes 的表达。
 若未提交，将记零分。
-  - 报名表：[Spreadsheet](https://docs.google.com/spreadsheets/d/18zlX-zmFu5cMR4M-xkWhIQOlnYPZrEXZj-TaO5MlIY0/edit?usp=sharing)（请在第 3 周结束前完成）
-  - 模板：[Overleaf LaTeX 模板](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
+  - 报名表：[Spreadsheet](https://docs.google.com/spreadsheets/d/1zlafpkc35GMxBAjGbVZsAxAt_87I1_N6jV409VaiXuU/edit?usp=sharing)（请在第 3 周结束前完成）
+  - 模板：[Overleaf LaTeX 模板](https://www.overleaf.com/read/wcxphgpkpmft#c40e7e)
   - 提交方式：向[课程网站仓库](https://github.com/hao-ai-lab/cse291-s26)提交 pull request
   - 截止时间：lecture 后第 7 天的晚上 11:59 PT
 
@@ -97,7 +97,7 @@ reading summary 不接受 late day。
 TA 团队会快速抽查所有总结；如果发现内容似乎完全由 ChatGPT 生成，我们会联系你（这种写作风格通常很容易识别）。
   - 模板：[NeurIPS format](https://neurips.cc/Conferences/2023/PaperInformation/StyleFiles)
   - 长度：>= 3 页
-  - 提交平台：[Gradescope](https://www.gradescope.com/courses/934507)
+  - 提交平台：[Gradescope](https://www.gradescope.com/courses/1288296/)
   - 截止时间：本周 summary 于下周周二晚 11:59pm 提交
 
 ### 课堂参与

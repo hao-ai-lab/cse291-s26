@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 课程团队
-description: CSE 291 2026 春季课程团队
+description: CSE 291A/DSC 291 2026 春季课程团队
 nav_exclude: true
 lang: zh
 lang_ref: staff

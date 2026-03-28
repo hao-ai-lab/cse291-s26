@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: CSE 291
+title: CSE 291A/DSC 291
 description: Machine Learning Systems
 author: Hao Zhang
 email: dsc204a-w24@gmail.com
@@ -31,12 +31,14 @@ permalink: pretty
 aux_links:
   Office Hours:
     - '/cse291-s26/officehours'
-  Canvas:
-    - 'https://canvas.ucsd.edu/courses/61585'
+  Canvas (CSE 291A):
+    - 'https://canvas.ucsd.edu/courses/74164/'
+  Canvas (DSC 291):
+    - 'https://canvas.ucsd.edu/courses/74171'
   Piazza:
     - 'https://piazza.com/class/mmy8wnuoci43xq#'
   GradeScope:
-    - 'https://www.gradescope.com/courses/934507'
+    - 'https://www.gradescope.com/courses/1288296/'
   # Feedback Form:
   #   - 'https://forms.gle/gHhrqEGCGE1S4N1r5'
 

@@ -4,7 +4,7 @@ week: 1
 date: 2026-03-31
 ---
 
-* Welcome to CSE 291: Data Systems for Machine Learning, Spring 2026!
+* Welcome to CSE 291A/DSC 291: Data Systems for Machine Learning, Spring 2026!
 * We will start at **Tuesday, March 31st**.
 * Please check the [syllabus]({{ '/syllabus/' | relative_url }}) for course details and policies.
 * Join us on [Piazza](https://piazza.com/class/mmy8wnuoci43xq#) for discussions and Q&A.

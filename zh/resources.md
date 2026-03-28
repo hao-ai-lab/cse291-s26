@@ -38,14 +38,14 @@ description: >-
 ## 课程材料
 
 ### 学生资料文件夹
-本学期相关材料会陆续发布到[这个文件夹](https://drive.google.com/drive/u/1/folders/18OskI3Q8Nw1j-Q25UaWbU-n-HcoqoBdQ)。
+本学期相关材料会陆续发布到[这个文件夹](https://drive.google.com/drive/u/1/folders/1D_yjGMxloXI4Ielztkpr2pcOHsikcfva)。
 
 ## 考试资源
 敬请期待……
 
 ## 心理与健康资源
 
-你的身心健康很重要，我们希望 CSE 291 **绝不会**成为你照顾自己的阻碍。下面是一些 UCSD 校园资源。如有需要，也欢迎随时联系授课教师和 TA 团队。
+你的身心健康很重要，我们希望 CSE 291A/DSC 291 **绝不会**成为你照顾自己的阻碍。下面是一些 UCSD 校园资源。如有需要，也欢迎随时联系授课教师和 TA 团队。
 
 * [University Health Services](https://studenthealth.ucsd.edu/)
 * [UHS Counseling and Psychological Services (CAPS)](https://caps.ucsd.edu/)

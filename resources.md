@@ -36,7 +36,7 @@ We will gradually add more useful resources on this page.
 ## Materials
 
 ### Student Materials Folder
-We will post relevant materials in [this folder](https://drive.google.com/drive/u/1/folders/18OskI3Q8Nw1j-Q25UaWbU-n-HcoqoBdQ) throughout the quarter.
+We will post relevant materials in [this folder](https://drive.google.com/drive/u/1/folders/1D_yjGMxloXI4Ielztkpr2pcOHsikcfva) throughout the quarter.
 
 ## Exam Resources
 Coming soon...
@@ -54,7 +54,7 @@ Exams and practice exams from previous semesters can be found below. These exams
 -->
 ## Wellness Resources
 
-Your wellbeing matters, and we hope that CSE 291 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!
+Your wellbeing matters, and we hope that CSE 291A/DSC 291 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!
 
 * [University Health Services](https://studenthealth.ucsd.edu/)
 * [UHS Counseling and Psychological Services (CAPS)](https://caps.ucsd.edu/)
