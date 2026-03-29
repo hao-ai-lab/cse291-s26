@@ -24,7 +24,7 @@ description: >-
 
 ## 书籍、相关文档与课程
 
-* **如果你不熟悉 Python，先用任何在线教程快速补上基础。** 这里有一份 [Python mini-course](http://ai.berkeley.edu/tutorial.html#PythonBasics)。
+* **如果你不熟悉 Python，先用任何在线教程快速补上基础。** 这里有一份 [Berkeley Python 学习页面](https://python.berkeley.edu/learn/)。
 * *Computer Organization and Design*（第 5 版），David Patterson 与 John Hennessy。
 * *Operating Systems: Three Easy Pieces*，Remzi 与 Andrea Arpaci-Dusseau。这里有[免费电子书](https://pages.cs.wisc.edu/~remzi/OSTEP/)。
 * *Data Management in Machine Learning Systems*，Matthias Boehm、Arun Kumar、Jun Yang。
@@ -38,10 +38,7 @@ description: >-
 ## 课程材料
 
 ### 学生资料文件夹
-本学期相关材料会陆续发布到[这个文件夹](https://drive.google.com/drive/u/1/folders/1D_yjGMxloXI4Ielztkpr2pcOHsikcfva)。
-
-## 考试资源
-敬请期待……
+本学期相关材料会陆续发布到[这个文件夹](https://drive.google.com/drive/folders/10PVYxmJIzc0otlJ0CPNnf9IwEntnS84t?usp=drive_link)。
 
 ## 心理与健康资源
 
