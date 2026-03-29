@@ -89,8 +89,8 @@ As long as your scribe notes meet the expected standard, you will receive full c
 If your notes have errors or are otherwise not up to standard, we will inform you and give you **one chance** to correct them.
 ChatGPT is highly recommended to polish the writing of your scribe notes.
 You will receive zero credit if you fail to submit your notes.
-  - Sign-up: [Spreadsheet](https://docs.google.com/spreadsheets/d/10c9lPa6fNvWVJ7DZx6Xm9sjxrai8VofrMDiQzwXHVcU/edit?usp=sharing) (please sign up by the end of the 2nd week)
-  - Template: [Overleaf LaTeX template](https://www.overleaf.com/read/tfpkfgxxpgyd#91f059)
+  - Sign-up: [Spreadsheet](https://docs.google.com/spreadsheets/d/1zlafpkc35GMxBAjGbVZsAxAt_87I1_N6jV409VaiXuU/edit?usp=sharing) (please sign up by the end of the 2nd week)
+  - Template: [Overleaf LaTeX template](https://www.overleaf.com/read/wcxphgpkpmft#c40e7e)
   - Submission: Submit a pull request to the [course website repo](https://github.com/hao-ai-lab/cse291-s26) for review.
   - Due: 11:59 PM PT, 7 days after the lecture
 

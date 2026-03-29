@@ -21,20 +21,28 @@ description: >-
 
 ---
 
-**本次 CSE 291A/DSC 291 更侧重“ML systems”，而不是更广义的“data systems”。**
-
-课程分为三个部分，覆盖以下主题。
+课程分为三个部分，覆盖以下主题：
 1. **基础**：深度学习、自动微分、CUDA 编程、ML 硬件
-2. **ML 系统与优化**：数据流图系统、ML 编译、内存与图优化、ML 并行、自动并行化
-3. **LLM 系统**：LLM 训练、数据整理、推理与服务、注意力优化、Scaling Law、RAG、LLM Agent
+2. **ML 系统与优化**：数据流图系统、ML 编译、内存与图优化、并行化
+3. **LLM/扩散模型系统**：LLM 训练、推理与服务、注意力优化、Scaling Law、前沿趋势
 
 课程期间还会邀请多位关键技术的发明者来做 guest lecture，所有 guest lecture 都**必须参加**。
 
 ## 课程信息
 - **上课时间**：周二、周四 12:30 PM - 1:50 PM。
 - **地点**：[Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar)。
-- **课程邮箱**：[cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)。
+- **课程咨询邮箱**：[cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)。
 - **授课教师**：[Hao Zhang](https://cseweb.ucsd.edu/~haozhang/)，办公室：HDSI 440。
+- **TA**：见[课程团队页面]({{ '/zh/staff/' | relative_url }})。
+
+<div class="syllabus-highlight" markdown="1">
+
+## 本年度重要变化
+- **混合授课**：由于授课教师日程安排困难，相当一部分 lecture 将通过 Zoom 进行，具体安排会在课程网站上更新。所有 lecture 都会在课后上传录播。
+- **Guest lectures**：本学期将有 3-4 场 guest lecture（通过 Zoom），涵盖最近 1-2 年的最新进展。Guest lecture 必须参加。
+- **PA 中使用 agentic coders**：是否在 PA 中使用最新的 agentic coders 由你自己决定。我们认为手动完成作业能显著提升你在该领域的理解和实践能力；agentic coders 可能满足部分要求，但也可能影响你的学习效果。
+
+</div>
 
 ## 先修要求
 本课程具有较强的交叉性，覆盖许多机器学习、数据和系统方向的前沿主题。
@@ -44,18 +52,18 @@ description: >-
 - CSE 132C 或 CSE 120（操作系统）或同等课程。
 - DSC 102（可扩展分析系统）或同等课程；或者在可扩展数据系统和 ML 算法方面有较强的实践经验，并获得授课教师许可。
 - 熟练掌握 Python 编程。
-- 了解深度学习以及 Tensor、PyTorch、HuggingFace 等框架。
+- 了解深度学习以及 TensorFlow、PyTorch、Hugging Face 等框架。
 
 以下课程不是硬性先修，但强烈建议在修读本课程前完成：
-- DSC 204A（Scalable Data Analytics）
-- DSC 240（Machine Learning）
+- DSC 204A（Scalable Data Analytics）。
+- DSC 240（Machine Learning）。
 
 ## 课程内容与形式
 ### 讲座
-课程每周线下上课 2 次，每次 80 分钟。
-  - 强烈建议到场参加。
-  - 所有讲座会在课后自动[发布到这里](https://podcast.ucsd.edu/watch/sp26/cse291_b00)。
-  - 我们会使用 [Piazza](https://piazza.com/class/mmy8wnuoci43xq#) 进行异步讨论和答疑。
+课程每周上课 2 次，每次 80 分钟。
+  - 强烈建议参加，但不强制要求。录播会在课后上传。
+  - 所有讲座也会[发布到这里](https://podcast.ucsd.edu/watch/sp26/cse291_b00)。
+  - 我们会使用 [Piazza](https://piazza.com/ucsd/spring2026/dsc291cse291a/home) 进行异步讨论和答疑。
 
 ### 3 次编程作业（PA）
   - 最新 PA 安排与详情请见[作业页面]({{ '/zh/assignments/' | relative_url }})。
@@ -64,7 +72,8 @@ description: >-
 ### 考试
   - 为了减轻大家压力：**没有期中考试**。替代形式是 reading summary。
   - 会有一次 final exam，且**必须线下参加**。请提前安排。
-  - 考试时间：待定。
+  - 考试时间：6/8/26，11:30 AM - 2:30 PM。
+  - 考试地点：待定。
   - 试题**全部且仅有**多项选择题（MCQ），即每题可能有一个或多个正确选项。
   - 时间安排原则是每 1 分钟对应最多 1 分，具体分值会按此校准。
   - 如无提前说明并获得学校认可理由下的补考资格，缺考将记零分。
@@ -79,26 +88,26 @@ description: >-
 只要笔记质量达标，就能获得 full credit；如果存在错误或质量不足，我们会通知你，并给你**一次**修改机会。
 强烈建议使用 ChatGPT 来润色 scribe notes 的表达。
 若未提交，将记零分。
-  - 报名表：[Spreadsheet](https://docs.google.com/spreadsheets/d/1zlafpkc35GMxBAjGbVZsAxAt_87I1_N6jV409VaiXuU/edit?usp=sharing)（请在第 3 周结束前完成）
+  - 报名表：[Spreadsheet](https://docs.google.com/spreadsheets/d/1zlafpkc35GMxBAjGbVZsAxAt_87I1_N6jV409VaiXuU/edit?usp=sharing)（请在第 2 周结束前完成）
   - 模板：[Overleaf LaTeX 模板](https://www.overleaf.com/read/wcxphgpkpmft#c40e7e)
   - 提交方式：向[课程网站仓库](https://github.com/hao-ai-lab/cse291-s26)提交 pull request
   - 截止时间：lecture 后第 7 天的晚上 11:59 PT
 
 ### Reading Summary
-从第一周到第十周，教师和 TA 团队每周会提供两篇必读和若干选读材料。
-你需要为每周的必读材料提交一份**详细总结**。
+从第一周到第九周，教师和 TA 团队每周会提供两篇必读和若干选读材料。
+你需要为每周的必读材料提交一份**简要总结**。
 reading summary 是本课程要求的一部分，必须由你本人在 Gradescope 上提交才能拿到学分。
 reading summary 不接受 late day。
 总结应当以高层理解为主，聚焦阅读的核心观点，尽量避免复杂数学推导。
 只要总结合理，就会给满分。
-总共需要提交 10 份 reading summary（第 1 周到第 10 周），共 10 分。
+总共需要提交 9 份 reading summary（第 1 周到第 9 周），共 9 分。
 
-你可以使用 ChatGPT 改善写作，但应避免直接使用 ChatPDF 之类工具在未完成阅读的情况下生成总结。
+鼓励使用 LLM 来改善写作，但应避免在未完成阅读的情况下直接用其生成总结。
 TA 团队会快速抽查所有总结；如果发现内容似乎完全由 ChatGPT 生成，我们会联系你（这种写作风格通常很容易识别）。
-  - 模板：[NeurIPS format](https://neurips.cc/Conferences/2023/PaperInformation/StyleFiles)
-  - 长度：>= 3 页
-  - 提交平台：[Gradescope](https://www.gradescope.com/courses/1288296/)
-  - 截止时间：本周 summary 于下周周二晚 11:59pm 提交
+  - 模板：[NeurIPS format](https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip)
+  - 长度：>= 2 页（含封面页）
+  - 提交平台：[Gradescope](https://www.gradescope.com/courses/1288296)
+  - 截止时间：本周 summary 于下周周二晚 11:59 PM 提交
 
 ### 课堂参与
 我们欢迎大家积极参与课程。参与分上限为 6%，获取方式如下：
@@ -111,10 +120,10 @@ TA 团队会快速抽查所有总结；如果发现内容似乎完全由 ChatGPT
 ## 成绩构成
 
 ### 评分组成（待定）
-- 编程作业：15% + 15% + 15%
-- Final Exam：37%
-- Reading Summary：10%
-- Scribe Duties：8%
+- 编程作业：15% + 15% + 20%
+- Final Exam：36%
+- Reading Summary：9%
+- Scribe Duties：5%
 - Extra Credit：6%
 
 ### 分数线
