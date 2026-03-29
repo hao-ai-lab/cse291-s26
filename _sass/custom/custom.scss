@@ -231,6 +231,70 @@
   color: white;
 }
 
+.syllabus-highlight,
+.announcement-highlight {
+  background: linear-gradient(135deg, #eef6ff 0%, #f7fbff 100%);
+  border: 0;
+  border-left: 10px solid #2563eb;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.08);
+  margin: 1.4rem 0 1.2rem;
+  padding: 1.1rem 1.25rem 1.05rem;
+  position: relative;
+}
+
+.syllabus-highlight::before,
+.announcement-highlight::before {
+  content: none;
+}
+
+.syllabus-highlight h2,
+.syllabus-highlight h3,
+.announcement-highlight h2,
+.announcement-highlight h3 {
+  color: #153e75;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.syllabus-highlight strong:first-child,
+.announcement-highlight strong:first-child {
+  background: #fff1b8;
+  border-radius: 0;
+  color: #1f2937;
+  display: inline;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  margin: 0 0 0.9rem;
+  padding: 0 0.2rem;
+  text-transform: none;
+}
+
+.syllabus-highlight p,
+.announcement-highlight p,
+.syllabus-highlight li,
+.announcement-highlight li {
+  color: #2d3748;
+  line-height: 1.65;
+}
+
+.syllabus-highlight p,
+.announcement-highlight p {
+  margin-top: 0;
+  margin-bottom: 0.85rem;
+}
+
+.syllabus-highlight ul,
+.syllabus-highlight ol,
+.announcement-highlight ul,
+.announcement-highlight ol {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+}
+
 /*#menu-button {
   height: 60px !important;
   margin-top: -60px !important;

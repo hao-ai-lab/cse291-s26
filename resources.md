@@ -36,22 +36,9 @@ We will gradually add more useful resources on this page.
 ## Materials
 
 ### Student Materials Folder
-We will post relevant materials in [this folder](https://drive.google.com/drive/u/1/folders/1D_yjGMxloXI4Ielztkpr2pcOHsikcfva) throughout the quarter.
+We will post relevant materials in [this folder](https://drive.google.com/drive/folders/10PVYxmJIzc0otlJ0CPNnf9IwEntnS84t?usp=drive_link) throughout the quarter when needed.
 
-## Exam Resources
-Coming soon...
 
-<!--
-### Study Guides
-* The midterm study guide will be distributed with the midterm exam.
-* The final study guide will be distributed with the final exam.
-
-### Past Exams
-Exams and practice exams from previous semesters can be found below. These exams may differ slightly in terms of material covered and syntax used, as the `datascience` module has changed over time.
-
-**Finals:**
-* [Summer 2023 Final](https://docs.google.com/viewer?url=https://github.com/data-8/archived-exams/raw/master/data8-su23-final.pdf) / [Solutions](https://docs.google.com/viewer?url=https://github.com/data-8/archived-exams/raw/master/data8-su23-final-sols.pdf)
--->
 ## Wellness Resources
 
 Your wellbeing matters, and we hope that CSE 291A/DSC 291 is _never_ a barrier for your wellbeing. Below are some campus resources that may be helpful. Remember that you are not alone: please reach out to the instructor and TAs whenever needed!

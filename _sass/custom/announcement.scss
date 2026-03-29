@@ -9,3 +9,9 @@
     @extend .text-epsilon;
   }
 }
+
+.announcement-highlight {
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
