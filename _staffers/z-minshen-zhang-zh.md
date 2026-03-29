@@ -4,6 +4,7 @@ website: https://alexzms.github.io/
 role: Teach Assistant
 photo: staff/minshen_zhang.jpg
 bio: Minshen Zhang 是 UC San Diego CSE 系硕士生，师从 Hao Zhang 教授。研究方向包括 ML 系统、长上下文建模和软硬件协同设计，目前主要参与 FastVideo 项目，专注于视频生成和世界模型。
+office-hours: Monday 2:00 PM - 3:00 PM, CSE B270A
 email: miz055@ucsd.edu
 lang: zh
 ---
