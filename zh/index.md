@@ -17,9 +17,6 @@ seo:
 Instructor: Hao Zhang, UC San Diego, Spring 2026
 {: .mb-2 .fs-6 .text-grey-dk-000 }
 
-Cross-listed as DSC 291.
-{: .fs-4 .text-grey-dk-000 }
-
 ## 课程公告
 
 {% assign announcements = site.announcements | where: 'lang', page.lang | reverse %}
