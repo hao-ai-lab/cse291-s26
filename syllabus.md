@@ -21,7 +21,7 @@ description: >-
 The course is organized into three parts, covering the following topics:
 1. **Basics**: deep learning, autodiff, CUDA programming, ML hardware
 2. **ML systems and optimizations**: Dataflow graph systems, ML compilation, memory and graph optimization, parallelism
-3. **LLM/diffusion systems**: LLM training, inference and serving, attention optimization, scaling law, trends
+3. **LLM/diffusion systems**: LLM training, inference and serving, attention optimization, scaling law, case studies, trendy topics.
 
 There will also be multiple guest lectures from the inventors of these key techniques. It is **mandatory** to attend all guest lectures.
 
@@ -43,7 +43,7 @@ There will also be multiple guest lectures from the inventors of these key techn
 
 
 ## Prerequisites
-This is an interdisciplinary class covering many up-to-date topics and developments in machine learning, data, and systems.
+This is an interdisciplinary class covering many up-to-date topics and developments in machine learning and systems.
 If you have never taken any of the following classes (or equivalent), you might need to allocate more time to prepare yourself.
 - MATH 18 (Linear Algebra) or equivalent.
 - CSE 151B (Deep Learning) or equivalent.
@@ -61,7 +61,7 @@ The following courses are not prerequisites, but they are highly recommended bef
 ### Lectures
 The class meets twice a week for 80-minute lectures.
   - Attending the lectures is highly encouraged, but not mandatory. Recordings will be uploaded.
-  - All lectures will also be [podcast here](https://podcast.ucsd.edu/watch/sp26/cse291_b00).
+  - All lectures will also be [podcast here](https://podcast.ucsd.edu/watch/sp26/cse291_b00) or recorded on Zoom.
   - We will use [Piazza](https://piazza.com/ucsd/spring2026/dsc291cse291a/home) for asynchronous discussions and questions.
 
 ### 3 Programming Assignments (PAs)

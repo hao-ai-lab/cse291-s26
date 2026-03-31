@@ -6,7 +6,7 @@ status: Active
 
 March 31
 : **1**{: .label} Introduction
-  : [Slides]()
+  : No slides or recording for Lecture 1
 : **Survey**{: .label .label-survey} [Beginning of Quarter Survey](https://forms.gle/Vzt2shaZyZCcwGMK7) **(Due: End of Week 2 - 4/12)**
 : **Readings**{: .label .label-reading} **(Due 4/7)**
   * **Required**: [1.1 - MLSys : Intro](https://mlsysbook.ai/book/contents/core/introduction/introduction.html)
