@@ -7,7 +7,7 @@ lang: zh
 
 3 月 31 日
 : **1**{: .label} 课程介绍
-  : [Slides]()
+  : No slides or recording for Lecture 1
 : **问卷**{: .label .label-survey} [学期初调查](https://forms.gle/Vzt2shaZyZCcwGMK7) **（截止：第 2 周结束前，即 4/12）**
 : **阅读材料**{: .label .label-reading} **（截止 4/7）**
   * **必读**：[1.1 - MLSys : Intro](https://mlsysbook.ai/book/contents/core/introduction/introduction.html)

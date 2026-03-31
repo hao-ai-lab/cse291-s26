@@ -6,7 +6,7 @@ lang: zh
 ---
 
 * 欢迎来到 CSE 291A/DSC 291：面向机器学习的数据系统，2026 春季！
-* 课程将于 **3月31日（周二）** 开始。
+* 课程将于 **3月31日（周二）** 在 [Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar) 开始。
 * 请查看[课程大纲]({{ '/zh/syllabus/' | relative_url }})了解课程详情和政策。
 * 请加入 [Piazza](https://piazza.com/ucsd/spring2026/dsc291cse291a/home) 参与讨论和问答，在 [Gradescope](https://www.gradescope.com/courses/1288296) 提交阅读总结和编程作业。
 * 课程相关问题请优先发 Piazza。其他事务请发邮件至 [cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com)。

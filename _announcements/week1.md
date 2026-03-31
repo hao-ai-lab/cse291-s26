@@ -5,7 +5,7 @@ date: 2026-03-31
 ---
 
 * Welcome to CSE 291A/DSC 291: Data Systems for Machine Learning, Spring 2026!
-* We will start on **Tuesday, March 31**.
+* We will start on **Tuesday, March 31** at [Warren Lecture Hall #2005](https://maps.google.com/maps?hl=en&q=Warren%20Lecture%20Hall%20%232005&source=calendar).
 * Please check the [syllabus]({{ '/syllabus/' | relative_url }}) for course details and policies.
 * Join us on [Piazza](https://piazza.com/ucsd/spring2026/dsc291cse291a/home) for discussions and Q&A, and on [Gradescope](https://www.gradescope.com/courses/1288296) for submitting your reading summaries and programming assignments.
 * For course-related inquiries, Piazza is the preferred place. Otherwise, please email [cse291a-sp26@googlegroups.com](mailto:cse291a-sp26@googlegroups.com).
