@@ -15,7 +15,7 @@ March 31
 
 April 2
 : **2**{: .label} Basics: Modern DL, computational graph, frameworks
-  : [Slides]() &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291_a00/1) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/4.2.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291_a00/2) &#8226; [Scribe Note]()
 
 
 <!-- : **Readings**{: .label .label-reading} -->
