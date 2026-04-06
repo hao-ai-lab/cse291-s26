@@ -9,10 +9,10 @@ nav_order: 980
 # Programming Assignments (PA) 
 
 PA1: Automatic Differentiation and Transformers
-- Release Date: TBD
-- Starter Code: TBD
+- Release Date: Apr 5, 2026
+- Starter Code: [Github](https://github.com/hao-ai-lab/cse-dsc291-s26-pa)
 - Remember do **not** use a public repo for your solution!
-- Due Date: TBD
+- Due Date: Apr 19, 2026, 23:59
 - Upload to Gradescope
 
 <!--
