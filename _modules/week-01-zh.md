@@ -16,4 +16,4 @@ lang: zh
 
 4 月 2 日
 : **2**{: .label} 基础：现代深度学习、计算图、框架
-  : [Slides]() &#8226; [录像](https://podcast.ucsd.edu/watch/sp26/cse291_a00/1) &#8226; [Scribe Note]()
+  : [Slides]() &#8226; [录像](https://podcast.ucsd.edu/watch/sp26/cse291a_a00) &#8226; [Scribe Note]()
