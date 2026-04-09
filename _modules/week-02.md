@@ -13,5 +13,5 @@ April 7
 
 
 April 9
-: **4**{: .label} Tensor formats, matmul deep dive, accelerators
-  : [Slides]
+: **4**{: .label} Tensor formats, matmul, accelerators
+  : [Slides](assets/slides/4.10.pdf)
