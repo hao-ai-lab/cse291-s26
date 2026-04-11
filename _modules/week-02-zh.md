@@ -15,4 +15,4 @@ lang: zh
 
 4 月 9 日
 : **4**{: .label} Tensor 格式、matmul 细节与加速器
-  : Slides 和录像将稍后发布
+  : [Slides](assets/slides/4.10.pdf) &#8226; [录像](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/4) &#8226; [Scribe Note]()
