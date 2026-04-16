@@ -14,4 +14,4 @@ April 7
 
 April 9
 : **4**{: .label} Tensor formats, matmul, accelerators
-  : [Slides](assets/slides/4.10.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/4) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/4.10.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/4) &#8226; [Scribe Note](assets/scribe_notes/apr9_scribe.pdf)
