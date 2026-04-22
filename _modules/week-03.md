@@ -6,7 +6,7 @@ status: Active
 
 April 14
 : **5**{: .label} Accelerators, GPUs
-  : [Slides](assets/slides/4.14.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/5) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/4.14.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/5) &#8226; [Scribe Note](assets/scribe_notes/apr14_scribe.pdf)
 : **Readings**{: .label .label-reading} **(Due 4/21)**
   * **Required**: [3.1 - GPU Glossary](https://modal.com/gpu-glossary)
   * **Optional**: [3.2 - GPU Matmul Optimization](https://siboehm.com/articles/22/CUDA-MMM), [3.3 - GPU Puzzles](https://github.com/srush/GPU-Puzzles)
