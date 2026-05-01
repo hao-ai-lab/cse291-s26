@@ -14,4 +14,4 @@ April 21
 
 April 23
 : **8**{: .label} Memory
-  : [Slides](assets/slides/4.23.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/8) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/4.23.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/8) &#8226; [Scribe Note](assets/scribe_notes/apr23_scribe.pdf)
