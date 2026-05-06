@@ -14,4 +14,4 @@ April 28
 
 April 30
 : **10**{: .label} Guest lecture: [Hector Liu](https://hunterhector.github.io/) (MBZUAI IFM)
-  : [Slides](assets/slides/4.30.pdf) &#8226; [Recording](https://drive.google.com/drive/folders/1YKl2gOzz8ggyww8xXaHxqEFq006odXTR?usp=sharing) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/4.30.pdf) &#8226; [Recording](https://drive.google.com/drive/folders/1YKl2gOzz8ggyww8xXaHxqEFq006odXTR?usp=sharing) &#8226; [Scribe Note](assets/scribe_notes/apr30_scribe.pdf)
