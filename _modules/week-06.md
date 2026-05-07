@@ -14,4 +14,4 @@ May 5
 
 May 7
 : **12**{: .label} Guest Lecture: [Woosuk Kwon](https://woosuk.me/) (Inferact.ai and vLLM)
-  : [Slides](assets/slides/5.7.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/12) &#8226; [Scribe Note]()
+  : [Slides](https://drive.google.com/file/d/1oh7apKIanu2wVlWOxxx2QeZlLJQWs61d/view?usp=drive_link) &#8226; [Recording](https://drive.google.com/drive/folders/1iBvx8HbTq9_lQhrE4MIvQFqN63NC6LOb?usp=sharing) &#8226; [Scribe Note]()
