@@ -5,7 +5,7 @@ status: Active
 ---
 
 June 2
-: **19**{: .label} Scaling Laws, Test-Time Compute, and Reasoning
+: **19**{: .label} Parallelization
   : [Slides](assets/slides/6.2.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/19) &#8226; [Scribe Note]()
 : **Readings**{: .label .label-reading} **(Optional)**
   * [10.1 - DeepSeek-V3](https://arxiv.org/abs/2412.19437), [10.2 - DeepSeek-V4](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf), [10.3 - Kimi K2](https://github.com/MoonshotAI/Kimi-K2/blob/main/tech_report.pdf)

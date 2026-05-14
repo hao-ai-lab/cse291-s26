@@ -5,7 +5,7 @@ status: Active
 ---
 
 May 19
-: **15**{: .label} Flash attention, collective communication
+: **15**{: .label} Flash attention, training optimization, collective communication
   : [Slides](assets/slides/5.19.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/15) &#8226; [Scribe Note]()
 : **Readings**{: .label .label-reading} **(Due 5/26)**
   * **Required**: [8.1 - FlashAttention Tutorial](https://courses.cs.washington.edu/courses/cse599m/23sp/notes/flashattn.pdf), [8.2 - FlashAttention](https://arxiv.org/abs/2205.14135), [8.3 - Megatron-LM](https://arxiv.org/abs/2104.04473)
@@ -14,5 +14,5 @@ May 19
 
 
 May 21
-: **16**{: .label} Parallelization
+: **16**{: .label} Guest Lecture (Dr. Zihao Ye)
   : [Slides](assets/slides/5.21.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/16) &#8226; [Scribe Note]()
