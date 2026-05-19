@@ -475,8 +475,10 @@ The A100 example is historically important because this was when KV-cache manage
 \draw[curve, prefill] (0,0.15) .. controls (1.2,1.1) and (2.8,2.1) .. (4.45,2.35);
 \draw[dashedline, queue] (1.25,0) -- (1.25,1.08);
 \draw[dashedline, queue] (3.85,0) -- (3.85,2.25);
-\node[align=center, font=\scriptsize, anchor=north] at (1.25,-0.70) {capacity\\without good\\KV mgmt.};
-\node[align=center, font=\scriptsize, anchor=north] at (3.85,-0.70) {capacity\\with better\\KV mgmt.};
+\node[font=\scriptsize, anchor=north] at (1.25,-0.52) {capacity};
+\node[align=center, font=\scriptsize, text width=1.55cm, anchor=north] at (1.25,-0.78) {poor KV\\mgmt.};
+\node[font=\scriptsize, anchor=north] at (3.85,-0.52) {capacity};
+\node[align=center, font=\scriptsize, text width=1.55cm, anchor=north] at (3.85,-0.78) {better KV\\mgmt.};
 \node[font=\footnotesize, align=center, fill=white, inner sep=1pt] at (2.60,1.28) {more resident requests\\keep more SMs busy};
 \end{scope}
 \end{tikzpicture}
