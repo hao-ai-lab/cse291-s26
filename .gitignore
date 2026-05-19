@@ -8,3 +8,4 @@ vendor/
 
 **/.DS_Store
 .idea
+_scribe_notes/*/build/
