@@ -375,25 +375,23 @@ The lecture highlighted FlashInfer as an example of this kernel-focused infrastr
 
 \begin{figure}[H]
 \centering
-\resizebox{0.92\linewidth}{!}{%
+\resizebox{0.96\linewidth}{!}{%
 \begin{tikzpicture}[
   font=\small,
-  layer/.style={draw, rounded corners=2pt, align=center, minimum height=0.92cm, text width=3.0cm},
-  meta/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, text width=6.8cm, fill=white},
+  layer/.style={draw, rounded corners=2pt, align=center, minimum height=0.98cm, text width=3.35cm},
+  meta/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, text width=7.7cm, fill=white},
   arr/.style={-{Latex[length=2mm]}, thick},
   metaarr/.style={-{Latex[length=2mm]}, thick, densely dashed}
 ]
 \node[layer, fill=lightgray] (api) at (0,0) {online requests\\streaming responses};
-\node[layer, fill=lightblue] (sched) at (3.55,0) {serving engine\\scheduling, batching};
-\node[layer, fill=lightorange] (mem) at (7.10,0) {KV memory manager\\allocation, reuse};
-\node[layer, fill=lightgreen] (kern) at (10.65,0) {kernel library\\ragged attention, MLP};
-\node[meta] (meta) at (7.10,-1.45) {metadata passed to kernels:\\sequence lengths, cache-block IDs, prefill/decode phase};
+\node[layer, fill=lightblue] (sched) at (4.0,0) {serving engine\\scheduling\\batching};
+\node[layer, fill=lightorange] (mem) at (8.0,0) {KV memory manager\\allocation\\reuse};
+\node[layer, fill=lightgreen] (kern) at (12.0,0) {kernel library\\ragged attention\\MLP};
+\node[meta] (meta) at (8.0,-1.55) {metadata for kernels:\\sequence lengths, cache-block IDs, prefill/decode phase};
 \draw[arr] (api) -- (sched);
 \draw[arr] (sched) -- (mem);
 \draw[arr] (mem) -- (kern);
-\draw[metaarr] (sched.south) |- (meta.west);
 \draw[metaarr] (mem.south) -- (meta.north);
-\draw[metaarr] (meta.east) -| (kern.south);
 \end{tikzpicture}
 }
 \caption{Modern serving stacks split responsibilities.  The scheduler decides which requests run; the memory manager decides where KV entries live; optimized kernel libraries execute token-wise and ragged attention work using the metadata supplied by the engine.}
@@ -452,31 +450,34 @@ The A100 example is historically important because this was when KV-cache manage
   dashedline/.style={dashed, thick},
   point/.style={circle, fill=black, inner sep=1.5pt}
 ]
-\path[use as bounding box] (-0.65,-1.18) rectangle (11.55,3.35);
+\path[use as bounding box] (-0.75,-1.38) rectangle (11.85,3.35);
 % Left plot: memory capacity
-\node[font=\bfseries] at (2.45,3.15) {memory use};
-\draw[axis] (0,0) -- (5.0,0) node[anchor=west] {batch size};
+\node[font=\bfseries] at (2.45,3.13) {memory capacity};
+\draw[axis] (0,0) -- (4.9,0);
 \draw[axis] (0,0) -- (0,2.9) node[above] {GB};
-\draw[dashedline, red!70!black] (0,2.55) -- (4.75,2.55) node[right, black] {capacity};
-\draw[curve, cache] (0,1.45) -- (4.45,2.72);
+\node[font=\footnotesize] at (2.45,-0.36) {batch size};
+\draw[dashedline, red!70!black] (0,2.55) -- (4.75,2.55);
+\node[font=\footnotesize, anchor=south west, fill=white, inner sep=1pt] at (0.18,2.56) {GPU memory limit};
+\draw[curve, cache] (0,1.45) -- (4.45,2.70);
 \draw[curve, decode] (0,1.45) -- (4.45,2.18);
 \node[point] at (1.25,1.81) {};
 \node[point] at (3.85,2.07) {};
 \node[anchor=east] at (-0.08,1.45) {weights};
-\node[align=center, font=\footnotesize] at (2.3,1.08) {better KV layout\\flatter growth};
-\node[align=center, font=\footnotesize] at (2.95,2.70) {naive allocation\\hits wall early};
+\node[align=center, font=\footnotesize, fill=white, inner sep=1pt] at (2.35,1.02) {better KV layout\\flatter growth};
+\node[align=center, font=\footnotesize, fill=white, inner sep=1pt] at (3.22,2.34) {naive allocation};
 
 % Right plot: throughput
-\begin{scope}[xshift=6.2cm]
+\begin{scope}[xshift=6.55cm]
 \node[font=\bfseries] at (2.45,3.15) {throughput};
-\draw[axis] (0,0) -- (5.0,0) node[anchor=west] {batch size};
+\draw[axis] (0,0) -- (4.9,0);
 \draw[axis] (0,0) -- (0,2.9) node[above] {req/s};
+\node[font=\footnotesize] at (2.45,-0.36) {batch size};
 \draw[curve, prefill] (0,0.15) .. controls (1.2,1.1) and (2.8,2.1) .. (4.45,2.35);
 \draw[dashedline, queue] (1.25,0) -- (1.25,1.08);
 \draw[dashedline, queue] (3.85,0) -- (3.85,2.25);
-\node[align=center, font=\footnotesize, anchor=north] at (1.25,-0.20) {capacity\\without good\\KV mgmt.};
-\node[align=center, font=\footnotesize, anchor=north] at (3.85,-0.20) {capacity\\with better\\KV mgmt.};
-\node[font=\footnotesize, align=center] at (2.7,1.05) {more resident requests\\keep more SMs busy};
+\node[align=center, font=\scriptsize, anchor=north] at (1.25,-0.70) {capacity\\without good\\KV mgmt.};
+\node[align=center, font=\scriptsize, anchor=north] at (3.85,-0.70) {capacity\\with better\\KV mgmt.};
+\node[font=\footnotesize, align=center, fill=white, inner sep=1pt] at (2.60,1.28) {more resident requests\\keep more SMs busy};
 \end{scope}
 \end{tikzpicture}
 }
