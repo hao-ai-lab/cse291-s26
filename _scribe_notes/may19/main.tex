@@ -62,6 +62,8 @@ The lecture started from the basic execution pattern of an autoregressive langua
 
 This separation matters because prefill and decode stress the GPU in different ways.  In prefill, the sequence length can be large, so the model sees many tokens at once.  In decode, the effective sequence length for the current forward pass is one token.  The model is still large, but the batch of useful computation is small unless many requests are served together.
 
+The key dimensions are batch size \(b\), sequence length \(s\), hidden size \(h\), number of heads \(n\), and per-head dimension \(d\).  Many tensors contain an \(s\) dimension.  Large \(s\) is expensive for attention because attention contains an \(s \times s\) interaction inside each sequence.  But \(s=1\) is also a problem when \(b\) is small: the GPU is asked to process one vector at a time.  The lecture emphasized this tension because it explains why the same model needs different optimization strategies under serving and single-request inference.
+
 \begin{figure}[H]
 \centering
 \resizebox{\linewidth}{!}{%
@@ -96,6 +98,8 @@ This separation matters because prefill and decode stress the GPU in different w
 
 The \textbf{key-value cache} stores the attention keys and values produced by each transformer layer for every token that is still active.  During decode, a new query attends to all previous keys and values, then the new token's key and value are appended.  From a systems perspective this object is not a cache in the usual sense.  A cache normally trades on an uncertain hit rate.  The KV cache has a hit rate of essentially 100 percent: every future decode step needs the previous tokens.  It is better to think of it as the \textbf{working set} of active generation.
 
+Its lifetime is also different from both parameters and ordinary activations.  Model weights are persistent for the whole server process.  Layer activations inside one forward pass are mostly ephemeral: a layer consumes them, produces the next activations, and the old values can be discarded.  KV entries sit between these extremes.  They are allocated at prefill, persist across all decode iterations for that request, grow by one token per decode step, and are freed only when the request finishes.
+
 \section{Serving and Inference Are Different Regimes}
 
 The lecture used \emph{serving} and \emph{inference} to distinguish two operating regimes.  The model computation is the same, but the performance objective is not.
@@ -115,11 +119,13 @@ In serving, the system is handling many independent requests.  Prompts arrive ov
 
 This is why large-\(b\) serving and \(b=1\) inference need different techniques.  Serving needs scheduling, dynamic batching, and memory management.  Single-request inference needs to reduce the number or cost of serial decode steps.
 
+A practical way to remember the distinction is to ask what the expensive GPU is doing.  In hosted serving, the operator is paying for a fleet of GPUs and wants those GPUs to serve as many users as possible subject to latency constraints.  In local or edge inference, such as a laptop or phone running one assistant request, there may be no useful batch to form.  The bottleneck is not aggregate throughput; it is the latency of that one generation.
+
 \section{Bottlenecks in Large-\texorpdfstring{\(b\)}{b} Serving}
 
 For online serving, the first bottleneck is batching prompts of different lengths.  If request \(R_1\) has a 20-token prompt and request \(R_2\) has a 500-token prompt, the naive tensor shape is obtained by padding \(R_1\) to length 500.  That is simple, but it wastes compute on padding tokens.  In a high-throughput service, padding overhead directly lowers the number of useful tokens processed per second.
 
-Decode has a different problem.  Each active request contributes only one new token per iteration, so the per-request sequence length for the current computation is \(s=1\).  However, the number of active requests \(b\) is large.  Also, the number of decode iterations is not known ahead of time.  One request may emit \EOS{} after a few tokens while another continues for hundreds of tokens.  A static batch has to wait for the longest request or leave GPU slots idle.
+Decode has a different problem.  Each active request contributes only one new token per iteration, so the per-request sequence length for the current computation is \(s=1\).  However, the number of active requests \(b\) is large.  This large \(b\) prevents the main projections and MLPs from degenerating completely: the work is still closer to a matrix-matrix multiply (GEMM) than a matrix-vector multiply (GEMV), because the request dimension supplies useful parallelism.  The hard part is that the number of decode iterations is not known ahead of time.  One request may emit \EOS{} after a few tokens while another continues for hundreds of tokens.  A static batch has to wait for the longest request or leave GPU slots idle.
 
 The memory bottleneck is the KV cache.  For each active request, the cache grows with the number of prompt and generated tokens.  With many concurrent users, total KV memory is approximately linear in the total number of active tokens.  If the cache is allocated or managed poorly, memory capacity becomes the limit before compute does.
 
@@ -139,13 +145,15 @@ When \(b=1\), the prefill batching problem mostly disappears, but decode becomes
 \[
   \text{arithmetic intensity} = \frac{\text{operations}}{\text{bytes moved}}.
 \]
-With one token, the GPU cannot reuse model weights across many tokens or many requests.  The computation often becomes memory-bandwidth bound: each step repeatedly streams the model's weights from high-bandwidth memory into faster on-chip storage, performs a small amount of useful computation for one token, and then repeats.
+With one token, the GPU cannot reuse model weights across many tokens or many requests.  The computation often becomes memory-bandwidth bound: each step repeatedly streams the model's weights from high-bandwidth memory into faster on-chip storage, performs a small amount of useful computation for one token, and then repeats.  This is why the lecture described the \(b=s=1\) case as wasteful even on very expensive accelerators such as B200-class GPUs.  The hardware has many SMs, but the current operation exposes too little parallel work to keep them busy.
 
 The serial nature of autoregressive decoding gives a simple latency model:
 \[
   \text{latency} = \text{step latency} \times \text{number of decode steps}.
 \]
 If one output token is generated per expensive target-model step, long generations are slow.  \textbf{Speculative decoding} attacks the second factor: it tries to generate and verify multiple tokens per target-model step.
+
+The important constraint is algorithmic, not merely implementation-related.  Autoregressive generation cannot know token \(t+1\) until token \(t\) has been chosen.  A large model may therefore move hundreds of gigabytes of weights, or in trillion-parameter MoE settings a much larger active weight footprint, just to advance one token.  Speculative decoding does not remove autoregression; it changes how often the large target model has to perform this expensive step.
 
 \subsection{How Speculative Decoding Helps}
 
@@ -185,13 +193,59 @@ The idea is to use a cheaper draft model to propose several future tokens, then 
 
 The target model still decides what is accepted.  The speedup comes from amortizing the target model's memory movement over several accepted tokens.  This is why speculative decoding is especially natural in the \(b=1\), \(s=1\) regime: the expensive model is underutilized per step, and reducing target steps can reduce end-to-end latency.
 
-Speculation is not free.  It adds draft-model computation and can waste work if many proposed tokens are rejected.  Its benefit depends on three quantities: draft model speed, target model verification cost, and the average number of accepted tokens per verification pass.
+Speculation is not free.  It adds draft-model computation and can waste work if many proposed tokens are rejected.  Its benefit depends on three quantities: draft model speed, target model verification cost, and the average number of accepted tokens per verification pass.  The right mental model is that speculative decoding may increase total arithmetic, but it can reduce wall-clock latency because it amortizes the target model's memory movement over several accepted tokens.
 
 \section{Static Batching Leaves Work on the Table}
 
 The lecture then moved back to the large-\(b\) serving case.  Production systems improve GPU utilization by batching requests together, but a static batch is a poor fit for text generation.
 
 The problem is easiest to see with the lecture's running example.  Suppose the serving engine can run at most three requests at once.  Requests \(R_1\) and \(R_2\) enter first.  Later, \(R_3\), \(R_4\), and \(R_5\) arrive.  If the system uses a static batch, it may keep running \(R_1\) and \(R_2\) until both finish.  If \(R_2\) emits \EOS{} early, its slot becomes idle.  If \(R_3\) arrives while the original batch is running, it may have to wait even though the GPU could have done useful work for it.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.92\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  cell/.style={draw, minimum width=0.54cm, minimum height=0.42cm, inner sep=0pt},
+  pre/.style={cell, fill=lightorange},
+  dec/.style={cell, fill=lightgreen},
+  wait/.style={cell, fill=lightgray},
+  eos/.style={cell, fill=red!15},
+  axis/.style={-{Latex[length=2mm]}, thick}
+]
+\node[anchor=east] at (-0.35,0) {\(S_1\)};
+\node[anchor=east] at (-0.35,-0.55) {\(S_2\)};
+\node[anchor=east] at (-0.35,-1.10) {\(S_3\)};
+\node[anchor=east] at (-0.35,-1.65) {\(S_4\)};
+\foreach \x in {0,...,8} {
+  \node[font=\footnotesize] at (\x*0.56,0.55) {\(t_{\x}\)};
+}
+\foreach \x in {0,1,2} \node[pre] at (\x*0.56,0) {};
+\foreach \x in {3,4,5} \node[dec] at (\x*0.56,0) {};
+\node[eos] at (6*0.56,0) {\scriptsize EOS};
+\foreach \x in {7,8} \node[wait] at (\x*0.56,0) {};
+
+\foreach \x in {0,1,2} \node[pre] at (\x*0.56,-0.55) {};
+\foreach \x in {3,4,5,6,7,8} \node[dec] at (\x*0.56,-0.55) {};
+
+\foreach \x in {0,1} \node[pre] at (\x*0.56,-1.10) {};
+\foreach \x in {2,3} \node[dec] at (\x*0.56,-1.10) {};
+\node[eos] at (4*0.56,-1.10) {\scriptsize EOS};
+\foreach \x in {5,6,7,8} \node[wait] at (\x*0.56,-1.10) {};
+
+\foreach \x in {0,1,2} \node[pre] at (\x*0.56,-1.65) {};
+\foreach \x in {3,4,5,6} \node[dec] at (\x*0.56,-1.65) {};
+\node[eos] at (7*0.56,-1.65) {\scriptsize EOS};
+\node[wait] at (8*0.56,-1.65) {};
+\draw[axis] (-0.05,-2.25) -- (5.15,-2.25) node[right] {time};
+\node[pre, label=right:{\footnotesize prefill}] at (5.75,0.05) {};
+\node[dec, label=right:{\footnotesize useful decode}] at (5.75,-0.45) {};
+\node[wait, label=right:{\footnotesize finished but batch not retired}] at (5.75,-0.95) {};
+\end{tikzpicture}
+}
+\caption{Static batching wastes iteration slots after shorter requests finish.  From the user's view, a request may have generated its answer but still wait for the longest request in the static batch.}
+\label{fig:static-batching}
+\end{figure}
 
 Static batching therefore has three related issues:
 \begin{itemize}
@@ -203,6 +257,8 @@ Static batching therefore has three related issues:
 \section{Continuous Batching}
 
 \textbf{Continuous batching} fixes this by making the batch dynamic at each iteration.  A request pool on the CPU holds waiting work.  An execution engine on the GPU runs a batch of active work up to a configured capacity.  At every iteration, the scheduler can remove finished requests, admit newly arrived requests, and mix prefill and decode work.
+
+The useful abstraction is \textbf{iteration-level scheduling}.  The batch is not a contract that lasts until every member finishes.  It is rebuilt at each iteration from the active requests and the waiting request pool.  This gives the system three abilities that static batching lacks: a finished request can leave immediately, a late request can join as soon as there is capacity, and a new prefill can run in the same iteration as ongoing decode work.
 
 \begin{figure}[H]
 \centering
@@ -236,7 +292,7 @@ Static batching therefore has three related issues:
 \draw[arr] (i1b.east) -- (i2c.west);
 \draw[arr] (i2b.east) -- (i3b.west);
 \draw[arr] (i2a.east) -- (i3a.west);
-\draw[arr, queue] (q1.east) .. controls (3.2,-2.6) and (8.2,-2.6) .. (i3c.west);
+\draw[arr, queue] (i2c.east) -- (i3c.west);
 \node[align=center, font=\footnotesize, text width=10.5cm] at (5.7,-3.05)
 {Finished requests leave immediately, and late-arriving requests can join a later iteration without waiting for the original batch to drain.};
 \end{tikzpicture}
@@ -247,7 +303,9 @@ Static batching therefore has three related issues:
 
 This design improves both utilization and user-facing latency.  The GPU sees a fuller batch over time, and each user can still receive an independent stream of tokens as soon as their request produces them.
 
-The policy for choosing which requests enter the GPU is a scheduling problem.  A simple implementation may use FIFO.  More advanced systems consider prompt length, remaining budget, priority, fairness, or latency service-level objectives.  The lecture's main point was not a particular policy, but the mechanism: the serving engine must be able to change the batch continuously.
+The policy for choosing which requests enter the GPU is a scheduling problem.  A simple implementation may use FIFO, as in the lecture example where \(R_3\) enters before \(R_4\) and \(R_5\).  More advanced systems consider prompt length, remaining budget, priority, fairness, or latency service-level objectives.  The lecture's main point was not a particular policy, but the mechanism: the serving engine must be able to change the batch continuously.
+
+One visible consequence is streaming.  Modern hosted LLM APIs often return tokens incrementally rather than waiting for the whole completion.  Continuous batching is one reason this is practical: each request can produce and return its own token stream while sharing GPU iterations with unrelated requests.
 
 \section{How Ragged Requests Can Be Batched}
 
@@ -255,7 +313,7 @@ Continuous batching is only useful if the model computation can run efficiently 
 
 Attention is sequence-dependent.  A token's attention output depends on which previous tokens it can attend to, and different requests may have different KV-cache lengths.  The attention kernel therefore needs per-request sequence metadata.
 
-Many other transformer operations are token-dependent rather than sequence-dependent.  The input projection, output projection, MLP, and MoE feed-forward computation apply the same operation to each token.  For these operations, the system can collapse the ragged batch into a single list of tokens:
+Many other transformer operations are token-dependent rather than sequence-dependent.  RMSNorm normalizes one token representation; the \(Q/K/V\) projections map one token hidden vector into attention vectors; the output projection, MLP, and SwiGLU/MoE feed-forward computation also apply per token.  For these operations, the system can collapse the ragged batch into a single list of tokens:
 \[
   (b, s, h) \quad \longrightarrow \quad
   \left(\sum_i s_i, h\right).
@@ -307,6 +365,41 @@ This decomposition also explains how different phases can be mixed:
 
 The difficult implementation work is in the attention kernels and metadata management.  Modern serving engines such as vLLM and SGLang include kernels that support variable-length prefill, decode, and mixed prefill-decode batches.  The lecture emphasized the principle: do not force every operation into a padded rectangular tensor when the operation itself only needs a list of tokens.
 
+This decomposition matters because, for large models at moderate context length, MLPs and projections often dominate the compute budget.  The lecture gave the rule of thumb that attention can be roughly 20--30\% of the work while MLP-like operations can be 70--80\%.  In that regime, batching token-wise work captures most of the benefit.  At very long context length the balance can flip, and attention can dominate.  That is why recent serving systems invest heavily in variable-length attention kernels rather than treating attention as an unbatched special case.
+
+\subsection{Kernel Trend: Variable-Length Attention}
+
+The current industry trend is to fuse more of this ragged attention logic into specialized GPU kernels.  Variable-length attention batching, online softmax as used in FlashAttention-style algorithms, and prefill/decode attention are increasingly handled together inside one kernel family.  This is less elegant than flattening token-wise MLP work because the kernel must track sequence boundaries, KV-cache locations, causal masks, and different context lengths.  But it is the direction production systems have moved because long contexts and mixed prefill-decode batches are now common.
+
+The lecture highlighted FlashInfer as an example of this kernel-focused infrastructure layer.  Serving frameworks and training frameworks increasingly rely on libraries that provide optimized kernels for LLM inference, and sometimes diffusion workloads too.  The important takeaway is not a specific API, but the division of labor: high-level serving systems decide scheduling and memory layout, while specialized kernel libraries make ragged attention and token-level computation fast enough to keep expensive accelerators busy.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.92\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  layer/.style={draw, rounded corners=2pt, align=center, minimum height=0.92cm, text width=3.0cm},
+  meta/.style={draw, rounded corners=2pt, align=center, font=\footnotesize, text width=6.8cm, fill=white},
+  arr/.style={-{Latex[length=2mm]}, thick},
+  metaarr/.style={-{Latex[length=2mm]}, thick, densely dashed}
+]
+\node[layer, fill=lightgray] (api) at (0,0) {online requests\\streaming responses};
+\node[layer, fill=lightblue] (sched) at (3.55,0) {serving engine\\scheduling, batching};
+\node[layer, fill=lightorange] (mem) at (7.10,0) {KV memory manager\\allocation, reuse};
+\node[layer, fill=lightgreen] (kern) at (10.65,0) {kernel library\\ragged attention, MLP};
+\node[meta] (meta) at (7.10,-1.45) {metadata passed to kernels:\\sequence lengths, cache-block IDs, prefill/decode phase};
+\draw[arr] (api) -- (sched);
+\draw[arr] (sched) -- (mem);
+\draw[arr] (mem) -- (kern);
+\draw[metaarr] (sched.south) |- (meta.west);
+\draw[metaarr] (mem.south) -- (meta.north);
+\draw[metaarr] (meta.east) -| (kern.south);
+\end{tikzpicture}
+}
+\caption{Modern serving stacks split responsibilities.  The scheduler decides which requests run; the memory manager decides where KV entries live; optimized kernel libraries execute token-wise and ragged attention work using the metadata supplied by the engine.}
+\label{fig:serving-stack}
+\end{figure}
+
 \section{KV Cache Management}
 
 For each transformer layer \(\ell\) and active request \(r\), the KV cache stores
@@ -347,13 +440,57 @@ The lecture's slide used this example to show why KV cache management is central
 \label{fig:kv-memory}
 \end{figure}
 
+The A100 example is historically important because this was when KV-cache management became an obvious systems bottleneck.  Modern accelerators such as B200 provide much larger memory capacity, but the same structure remains: model weights claim a fixed base allocation, cache grows with active tokens, and throughput improves only if enough concurrent work fits in memory.
+
+\begin{figure}[H]
+\centering
+\resizebox{0.92\linewidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  axis/.style={-{Latex[length=2mm]}, thick},
+  curve/.style={thick},
+  dashedline/.style={dashed, thick},
+  point/.style={circle, fill=black, inner sep=1.5pt}
+]
+\path[use as bounding box] (-0.65,-1.18) rectangle (11.55,3.35);
+% Left plot: memory capacity
+\node[font=\bfseries] at (2.45,3.15) {memory use};
+\draw[axis] (0,0) -- (5.0,0) node[anchor=west] {batch size};
+\draw[axis] (0,0) -- (0,2.9) node[above] {GB};
+\draw[dashedline, red!70!black] (0,2.55) -- (4.75,2.55) node[right, black] {capacity};
+\draw[curve, cache] (0,1.45) -- (4.45,2.72);
+\draw[curve, decode] (0,1.45) -- (4.45,2.18);
+\node[point] at (1.25,1.81) {};
+\node[point] at (3.85,2.07) {};
+\node[anchor=east] at (-0.08,1.45) {weights};
+\node[align=center, font=\footnotesize] at (2.3,1.08) {better KV layout\\flatter growth};
+\node[align=center, font=\footnotesize] at (2.95,2.70) {naive allocation\\hits wall early};
+
+% Right plot: throughput
+\begin{scope}[xshift=6.2cm]
+\node[font=\bfseries] at (2.45,3.15) {throughput};
+\draw[axis] (0,0) -- (5.0,0) node[anchor=west] {batch size};
+\draw[axis] (0,0) -- (0,2.9) node[above] {req/s};
+\draw[curve, prefill] (0,0.15) .. controls (1.2,1.1) and (2.8,2.1) .. (4.45,2.35);
+\draw[dashedline, queue] (1.25,0) -- (1.25,1.08);
+\draw[dashedline, queue] (3.85,0) -- (3.85,2.25);
+\node[align=center, font=\footnotesize, anchor=north] at (1.25,-0.20) {capacity\\without good\\KV mgmt.};
+\node[align=center, font=\footnotesize, anchor=north] at (3.85,-0.20) {capacity\\with better\\KV mgmt.};
+\node[font=\footnotesize, align=center] at (2.7,1.05) {more resident requests\\keep more SMs busy};
+\end{scope}
+\end{tikzpicture}
+}
+\caption{KV-cache management links memory capacity to throughput.  If cache allocation grows too fast with batch size, the server hits the memory wall before the GPU reaches its useful throughput region.}
+\label{fig:kv-throughput}
+\end{figure}
+
 A concrete calculation helps explain the slide's intuition.  For a 13B-class transformer with roughly \(L=40\), \(n_{\kv}=40\), \(d_{\mathrm{head}}=128\), fp16/bf16 cache elements, and a 2048-token sequence,
 \[
   M_{\kv} \approx
   2 \cdot 40 \cdot 40 \cdot 128 \cdot 2 \cdot 2048
   \approx 1.6 \text{ GB per request}.
 \]
-Eight such full-length requests require about 13GB of KV cache, matching the memory scale shown in the lecture.  Better cache management can raise the number of concurrent requests by avoiding over-reservation and fragmentation.  The slides previewed this as the motivation for vLLM and paged attention, where the goal is to flatten the memory growth curve so the same GPU can host more active requests.
+Eight such full-length requests require about 13GB of KV cache, matching the memory scale shown in the lecture.  Better cache management can raise the number of concurrent requests by avoiding over-reservation and fragmentation.  The slides used the vLLM/PagedAttention story to preview the next lecture: existing systems in that example hit the wall around 8 concurrent requests, while vLLM-style cache management aims to support many more, on the order of 40 in the slide.  The systems lesson is not the exact number, which depends on model and workload, but the mechanism: flattening KV memory growth increases resident batch size, which raises throughput until another bottleneck appears.
 
 The lecture also mentioned prefix caching.  If many requests share a prefix, such as the same system prompt, their prefix KV states can be reused instead of recomputed and stored separately.  Serving engines often organize reusable prefixes with a trie or radix tree over token IDs.  This is separate from continuous batching, but it attacks the same serving objective: spend memory and compute only on useful, non-duplicated tokens.
 
@@ -361,8 +498,8 @@ The lecture also mentioned prefix caching.  If many requests share a prefix, suc
 
 The main conceptual split is between \textbf{latency optimization for small batches} and \textbf{throughput optimization for serving}.  In the \(b=1\) case, decode is serial and memory-bandwidth bound, so speculative decoding reduces the number of expensive target-model steps.  In large-\(b\) serving, the hard problems are dynamic batching and KV memory management.
 
-Continuous batching improves serving by letting requests join and leave at iteration granularity.  Its implementation depends on separating token-wise transformer work from sequence-dependent attention.  KV cache management is equally important because the cache grows with active tokens and can become the capacity bottleneck even when the GPU has enough compute.
+Continuous batching improves serving by letting requests join and leave at iteration granularity.  Its implementation depends on separating token-wise transformer work from sequence-dependent attention.  The current kernel trend is to make even the sequence-dependent part less special, using variable-length attention kernels and FlashAttention-style online softmax inside production kernel libraries.  KV cache management is equally important because the cache grows with active tokens and can become the capacity bottleneck even when the GPU has enough compute.
 
-The examples in lecture were meant to build this systems intuition.  Padding looks convenient, but wastes compute.  Static batches look simple, but waste slots and increase queueing.  A KV cache looks like a minor implementation detail, but in a real serving stack it often determines how many users the GPU can serve at once.
+The examples in lecture were meant to build this systems intuition.  Padding looks convenient, but wastes compute.  Static batches look simple, but waste slots and increase queueing.  A KV cache looks like a minor implementation detail, but in a real serving stack it often determines how many users the GPU can serve at once.  Prefix caching and RadixAttention extend the same idea to repeated prompts: if many requests share a prefix, the server should reuse the already computed KV entries rather than recompute or duplicate them.
 
 \end{document}
