@@ -495,7 +495,7 @@ Eight such full-length requests require about 13GB of KV cache, matching the mem
 
 The lecture also mentioned prefix caching.  If many requests share a prefix, such as the same system prompt, their prefix KV states can be reused instead of recomputed and stored separately.  Serving engines often organize reusable prefixes with a trie or radix tree over token IDs.  This is separate from continuous batching, but it attacks the same serving objective: spend memory and compute only on useful, non-duplicated tokens.
 
-\section{What to Remember}
+\section{Takeaways}
 
 The main conceptual split is between \textbf{latency optimization for small batches} and \textbf{throughput optimization for serving}.  In the \(b=1\) case, decode is serial and memory-bandwidth bound, so speculative decoding reduces the number of expensive target-model steps.  In large-\(b\) serving, the hard problems are dynamic batching and KV memory management.
 
