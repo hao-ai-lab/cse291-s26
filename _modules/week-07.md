@@ -15,4 +15,4 @@ May 12
 
 May 14
 : **14**{: .label} LLM internals, scaling law, inference and serving
-  : [Slides](assets/slides/5.14.pdf) &#8226; [Recording](https://drive.google.com/file/d/1bmHkelJIuFap1mwF1SXoU32WvpH55ZkI/view?usp=sharing) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/5.14.pdf) &#8226; [Recording](https://drive.google.com/file/d/1bmHkelJIuFap1mwF1SXoU32WvpH55ZkI/view?usp=sharing) &#8226; [Scribe Note](assets/scribe_notes/may12_scribe.pdf)
