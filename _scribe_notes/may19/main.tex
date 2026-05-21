@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb}
+\usepackage{array}
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
@@ -47,6 +48,7 @@
 \newcommand{\HBM}{\mathrm{HBM}}
 \newcommand{\SRAM}{\mathrm{SRAM}}
 \newcommand{\EOS}{\texttt{<EOS>}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \title{\vspace{-2.0em}Generative LLM Serving: Batching, Speculation, and KV Cache Management}
 \author{CSE 291A/DSC 291 Scribe Notes\\Instructor: Prof. Hao Zhang}
@@ -494,6 +496,23 @@ A concrete calculation helps explain the slide's intuition.  For a 13B-class tra
   \approx 1.6 \text{ GB per request}.
 \]
 Eight such full-length requests require about 13GB of KV cache, matching the memory scale shown in the lecture.  Better cache management can raise the number of concurrent requests by avoiding over-reservation and fragmentation.  The slides used the vLLM/PagedAttention story to preview the next lecture: existing systems in that example hit the wall around 8 concurrent requests, while vLLM-style cache management aims to support many more, on the order of 40 in the slide.  The systems lesson is not the exact number, which depends on model and workload, but the mechanism: flattening KV memory growth increases resident batch size, which raises throughput until another bottleneck appears.
+
+A useful way to understand the PagedAttention preview is to separate the logical sequence from the physical KV-memory layout:
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}L{0.24\linewidth}L{0.36\linewidth}L{0.34\linewidth}@{}}
+\toprule
+\textbf{Layout idea} & \textbf{What it means} & \textbf{Serving intuition}\\
+\midrule
+Contiguous reservation & Reserve KV space per request, often for an upper-bound output length. & Simple indexing, but unused tail space and fragmentation reduce the number of resident requests.\\
+Block-based allocation & Store KV entries in fixed-size token blocks and use a block table to map logical token order to physical blocks. & The request behaves as if its cache is contiguous, while memory can grow only as real tokens arrive.\\
+Throughput effect & Lower memory waste before the capacity wall. & Fits more resident requests, raising the effective batch size.\\
+\bottomrule
+\end{tabular}
+\caption{PagedAttention borrows the virtual-memory idea of separating logical address order from physical storage.  For KV cache, this reduces fragmentation and over-reservation.}
+\label{tab:paged-attention-intuition}
+\end{table}
 
 The lecture also mentioned prefix caching.  If many requests share a prefix, such as the same system prompt, their prefix KV states can be reused instead of recomputed and stored separately.  Serving engines often organize reusable prefixes with a trie or radix tree over token IDs.  This is separate from continuous batching, but it attacks the same serving objective: spend memory and compute only on useful, non-duplicated tokens.
 
