@@ -30,10 +30,10 @@
 \pagestyle{fancy}
 \setlength{\headheight}{14pt}
 \fancyhf{}
-\lhead{CSE 291A/DSC 291}
-\chead{Lecture 15 Scribe Notes}
-\rhead{May 19, 2026}
-\cfoot{\thepage}
+\lhead{\thepage}
+\rhead{\itshape 15: Generative LLM Serving}
+\renewcommand{\headrulewidth}{0pt}
+\cfoot{}
 
 \definecolor{prefill}{RGB}{30,116,180}
 \definecolor{decode}{RGB}{44,160,44}
@@ -50,13 +50,34 @@
 \newcommand{\EOS}{\texttt{<EOS>}}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
-\title{\vspace{-2.0em}Generative LLM Serving: Batching, Speculation, and KV Cache Management}
-\author{CSE 291A/DSC 291 Scribe Notes\\Instructor: Prof. Hao Zhang}
-\date{Lecture 15, May 19, 2026}
+\newcommand{\courseheader}{%
+  \vspace*{0.35in}
+  \begin{center}
+  \fbox{%
+    \begin{minipage}{0.94\textwidth}
+    \vspace{0.6em}
+    \textbf{CSE 291A/DSC 291: Data Systems for Machine Learning, Spring 2026}
+
+    \vspace{1.2em}
+    \begin{center}
+    {\Large 15: Generative LLM Serving: Batching, Speculation, and KV Cache Management}
+    \end{center}
+    \vspace{0.8em}
+    \begin{tabular}{@{}p{0.12\textwidth}p{0.78\textwidth}@{}}
+    \textit{Lecturer:} & \textit{Hao Zhang}\\
+    \textit{Scribes:} &
+    \textit{Suraj Ranganath, Vaishak Menon, Arunima Anand, Jackson Wilke, Atharv Nair, Rishika Mundada, Anish Patnaik, Kris Dcosta, Ishan Jain}
+    \end{tabular}
+    \vspace{0.6em}
+    \end{minipage}%
+  }
+  \end{center}
+  \vspace{1.2em}
+}
 
 \begin{document}
-\maketitle
-\vspace{-1.3em}
+\thispagestyle{plain}
+\courseheader
 
 \section{Execution Model: Prefill, Decode, and the KV Cache}
 
