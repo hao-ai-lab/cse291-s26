@@ -15,4 +15,4 @@ May 19
 
 May 21
 : **16**{: .label} Guest Lecture (Dr. Zihao Ye)
-  : [Slides](assets/slides/5.21.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/16) &#8226; [Scribe Note]()
+  : Slides not available for now &#8226; Recording: the lecture speaker requested the recording to be limited within the range of UC San Diego CSE/DSC 291 class, so please go to Piazza to find the video &#8226; [Scribe Note]()
