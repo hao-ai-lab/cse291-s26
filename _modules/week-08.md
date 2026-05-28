@@ -5,7 +5,7 @@ status: Active
 ---
 
 May 19
-: **15**{: .label} Flash attention, training optimization, collective communication
+: **15**{: .label} Inference and serving, continuous batching, paged attention
   : [Slides](assets/slides/5.19.pdf) &#8226; [Recording](https://drive.google.com/file/d/1DbUhVixwvLu7tZ7ePZFMmcDev2Xmtdau/view?usp=drive_link) &#8226; [Scribe Note](assets/scribe_notes/may19_scribe.pdf)
 : **Readings**{: .label .label-reading} **(Due 5/26)**
   * **Required**: [8.1 - FlashAttention Tutorial](https://courses.cs.washington.edu/courses/cse599m/23sp/notes/flashattn.pdf), [8.2 - FlashAttention](https://arxiv.org/abs/2205.14135), [8.3 - Megatron-LM](https://arxiv.org/abs/2104.04473)
@@ -15,4 +15,4 @@ May 19
 
 May 21
 : **16**{: .label} Guest Lecture (Dr. Zihao Ye)
-  : [Slides](assets/slides/5.21.pdf) &#8226; [Recording](https://podcast.ucsd.edu/watch/sp26/cse291a_a00/16) &#8226; [Scribe Note]()
+  : Slides not available for now &#8226; Recording: the lecture speaker requested the recording to be limited within the range of UC San Diego CSE/DSC 291 class, so please go to Piazza to find the video &#8226; [Scribe Note]()
