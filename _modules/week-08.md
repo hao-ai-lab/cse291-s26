@@ -6,7 +6,7 @@ status: Active
 
 May 19
 : **15**{: .label} Inference and serving, continuous batching, paged attention
-  : [Slides](assets/slides/5.19.pdf) &#8226; [Recording](https://drive.google.com/file/d/1DbUhVixwvLu7tZ7ePZFMmcDev2Xmtdau/view?usp=drive_link) &#8226; [Scribe Note]()
+  : [Slides](assets/slides/5.19.pdf) &#8226; [Recording](https://drive.google.com/file/d/1DbUhVixwvLu7tZ7ePZFMmcDev2Xmtdau/view?usp=drive_link) &#8226; [Scribe Note](assets/scribe_notes/may19_scribe.pdf)
 : **Readings**{: .label .label-reading} **(Due 5/26)**
   * **Required**: [8.1 - FlashAttention Tutorial](https://courses.cs.washington.edu/courses/cse599m/23sp/notes/flashattn.pdf), [8.2 - FlashAttention](https://arxiv.org/abs/2205.14135), [8.3 - Megatron-LM](https://arxiv.org/abs/2104.04473)
   * **Optional**: [8.4 - Alpa](https://arxiv.org/abs/2201.12023), [8.5 - GShard](https://arxiv.org/abs/2006.16668), [8.6 - GPipe](https://arxiv.org/abs/1811.06965)
